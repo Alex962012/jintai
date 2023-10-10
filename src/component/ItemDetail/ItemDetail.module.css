@@ -1,0 +1,19 @@
+.row {
+    display: flex;
+
+}
+
+.photogallery {
+    background-color: aqua;
+    width: 350px;
+    height: 350px;
+}
+
+.specificationsBlock {
+    padding: 0 20rem;
+}
+
+.specificationsTitle {
+    font-size: 25px;
+    font-weight: 800;
+}

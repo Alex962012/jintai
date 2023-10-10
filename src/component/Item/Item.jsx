@@ -1,28 +1,20 @@
-import { useState } from "react";
-import "./Item.css";
-import { Modal } from "../ModalWindow/ModalWindow";
-
-export const Item = () => {
-    const [active, setActive] = useState(false);
-
-    const onClickModal = () => {
-        setActive(true);
-    };
+import { Link } from "react-router-dom";
+import styles from "./Item.module.css";
+export const Item = (props) => {
     return (
-        <div className="order-item">
-            <img
-                // src={imageUrl}
-                // alt={title}
-                className="item-picture"
-                onClick={() => onClickModal()}
-            ></img>
-            <div className="item-title-container">
-                <div className="item-name" onClick={() => onClickModal()}>
-                    {title}
+        <Link to="/specifications" state={{ item: { ...props } }} className={styles.logoContainer}>
+            <div className={styles.logo}></div>
+
+            <div className={styles.orderItem}>
+                <img
+                    src={props.imageUrl}
+                    alt={props.title}
+                    className={styles.itemPicture}
+                ></img>
+                <div className={styles.itemTitleContainer}>
+                    <div className={styles.itemName}>{props.title}</div>
                 </div>
             </div>
-
-
-        </div>
+        </Link>
     );
 };

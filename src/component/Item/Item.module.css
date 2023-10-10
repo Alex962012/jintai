@@ -1,21 +1,21 @@
-.order-item {
+.orderItem {
     margin: 20px 0;
     width: 350px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.item-title-container {
+.itemTitleContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 1px 1px 1px;
 }
 
-.item-title-container:hover {
+.itemTitleContainer:hover {
     cursor: pointer;
 }
 
-.item-picture {
+.itemPicture {
     width: 350px;
     height: 380px;
     object-fit: cover;
@@ -23,12 +23,12 @@
     cursor: pointer;
 }
 
-.item-picture:hover {
+.itemPicture:hover {
     transform: scale(1.01);
 }
 
-.item-name {
-    color: var(--price-color);
+.itemName {
+    color: var(--base-color);
     font-size: 28px;
     font-weight: 600;
     width: 100%;
@@ -36,7 +36,7 @@
         serif;
 }
 
-.item-price {
+.itemPrice {
     color: var(--price-color);
     font-size: 26px;
     text-align: right;
@@ -45,7 +45,7 @@
     font-family: "Cormorant Garamond", serif;
 }
 
-.item-like {
+.itemLike {
     background-image: url("https://cdn4.iconfinder.com/data/icons/basic-ui-2-line/32/heart-love-like-likes-loved-favorite-512.png");
     width: 40px;
     height: 40px;
@@ -54,15 +54,15 @@
     cursor: pointer;
 }
 
-.item-like:hover {
+.itemLike:hover {
     opacity: 0.8;
 }
 
-.item-like-active:hover {
+.itemLikeActive:hover {
     opacity: 0.8;
 }
 
-.item-like-active {
+.itemLikeActive {
     background-image: url("https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-512.png");
     width: 40px;
     height: 40px;
@@ -72,12 +72,12 @@
 }
 
 @media only screen and (max-width: 1374px) {
-    .order-item {
+    .orderItem {
         width: 100%;
         max-width: 24vw;
     }
 
-    .item-picture {
+    .itemPicture {
         width: 100%;
         max-width: 24vw;
         height: 34vw;
@@ -85,23 +85,23 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    .order-item {
+    .orderItem {
         width: 300px;
     }
 
-    .item-picture {
+    .itemPicture {
         width: 300px;
         height: 360px;
     }
 }
 
 @media only screen and (max-width: 992px) {
-    .order-item {
+    .orderItem {
         width: 265px;
         max-width: 265px;
     }
 
-    .item-picture {
+    .itemPicture {
         width: 265px;
         max-width: 265px;
         height: 320px;
@@ -109,163 +109,163 @@
 }
 
 @media only screen and (max-width: 815px) {
-    .order-item {
+    .orderItem {
         width: 230px;
     }
 
-    .item-picture {
+    .itemPicture {
         width: 230px;
         height: 280px;
     }
 
-    .item-name {
+    .itemName {
         font-size: 20px;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .order-item {
+    .orderItem {
         width: 200px;
     }
 
-    .item-picture {
+    .itemPicture {
         width: 200px;
         height: 260px;
     }
 
-    .item-name {
+    .itemName {
         font-size: 20px;
     }
 }
 
 @media only screen and (max-width: 662px) {
-    .order-item {
+    .orderItem {
         width: 180px;
     }
 
-    .item-picture {
+    .itemPicture {
         width: 180px;
         height: 240px;
     }
 
-    .item-name {
+    .itemName {
         font-size: 18px;
     }
 
-    .item-like {
+    .itemLike {
         width: 30px;
         height: 30px;
     }
 
-    .item-like-active {
+    .itemLikeActive {
         width: 30px;
         height: 30px;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .order-item {
+    .orderItem {
         width: 160px;
     }
 
-    .item-picture {
+    .itemPicture {
         width: 160px;
         height: 240px;
     }
 }
 
 @media only screen and (max-width: 527px) {
-    .order-item {
+    .orderItem {
         max-width: 145px;
     }
 
-    .item-picture {
+    .itemPicture {
         max-width: 145px;
         height: 220px;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    .order-item {
+    .orderItem {
         width: 220px;
         max-width: 220px;
     }
 
-    .item-picture {
+    .itemPicture {
         max-width: 220px;
         width: 220px;
         height: 280px;
     }
 
-    .order-item:nth-child(3) {
+    .orderItem:nth-child(3) {
         display: none;
     }
 }
 
 @media only screen and (max-width: 479px) {
-    .order-item {
+    .orderItem {
         max-width: 200px;
         width: 100%;
     }
 
-    .item-picture {
+    .itemPicture {
         max-width: 200px;
         height: 280px;
     }
 }
 
 @media only screen and (max-width: 443px) {
-    .order-item {
+    .orderItem {
         max-width: 200px;
     }
 }
 
 @media only screen and (max-width: 423px) {
-    .order-item {
+    .orderItem {
         max-width: 180px;
     }
 
-    .item-picture {
+    .itemPicture {
         max-width: 180px;
         height: 250px;
     }
 }
 
 @media only screen and (max-width: 400px) {
-    .item-picture {
+    .itemPicture {
         max-width: 180px;
         height: 240px;
     }
 }
 
 @media only screen and (max-width: 380px) {
-    .order-item:nth-child(3) {
+    .orderItem:nth-child(3) {
         display: block;
     }
 
-    .order-item {
+    .orderItem {
         width: 95px;
     }
 
-    .item-picture {
+    .itemPicture {
         width: 95px;
         height: 140px;
     }
 
-    .item-name {
+    .itemName {
         font-size: 12px;
     }
 
-    .item-price {
+    .itemPrice {
         font-size: 12px;
     }
 
-    .item-like {
+    .itemLike {
         width: 25px;
         height: 25px;
     }
 
-    .item-like-active {
+    .itemLikeActive {
         width: 25px;
         height: 25px;
     }

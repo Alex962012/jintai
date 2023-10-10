@@ -1,16 +1,17 @@
+import { Item } from "../../component/Item/Item";
+import styles from './Catalog.module.css'
+const items = require("../../items.json");
 
 export const Catalog = () => {
 
     return (
-        <div className="order-section">
-            <div className="order-section--title">
-                Вы можете заказать любое изделие из каталога по своим меркам
+        <div className={styles.orderSection}>
+            <div className={styles.orderSectionTitle}>
+                Каталог
             </div>
 
-
-
-            <div className="content-order">
-
+            <div className={styles.contentOrder}>
+                {items.map((item) => (<Item {...item} key={item.id} />))}
             </div>
         </div>
     );

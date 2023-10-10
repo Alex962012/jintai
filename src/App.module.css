@@ -1,9 +1,11 @@
 :root {
     --main-bg-color: #c19080;
     --main-br-color: #74635e;
-    --header-color: #eee2df;
-    --base-color: #ebebeb;
-    --price-color: #432818;
+    --header-color: #292F35;
+    ;
+    --base-color: #383838;
+    --price-color: #fef001;
+    --white-color: #ffffff;
 }
 
 
