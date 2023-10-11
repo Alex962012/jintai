@@ -4,14 +4,14 @@
     --header-color: #292F35;
     ;
     --base-color: #383838;
-    --price-color: #fef001;
+    --price-color: #FCBC04;
     --white-color: #ffffff;
 }
 
 
 .wrapper {
 
-    max-width: 1400px;
+    /* max-width: 1480px; */
     /* width: 98%; */
     margin: 0 auto;
     /* border: 2px solid var(--price-color); */

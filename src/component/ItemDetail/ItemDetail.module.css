@@ -1,6 +1,12 @@
+.itemDetail {
+    width: 80%;
+    padding: 20px 0px;
+    margin: 0 auto;
+}
+
 .row {
     display: flex;
-
+    justify-content: space-around;
 }
 
 .photogallery {
@@ -10,7 +16,7 @@
 }
 
 .specificationsBlock {
-    padding: 0 20rem;
+    width: 50%;
 }
 
 .specificationsTitle {

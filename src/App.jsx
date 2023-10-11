@@ -7,15 +7,16 @@ import { AboutBrand } from "./pages/AboutBrand/AboutBrand";
 import styles from "./App.module.css";
 import { ItemDetail } from "./component/ItemDetail/ItemDetail";
 import { HeaderWidget } from "./component/HeaderWidget/HeaderWidget";
-import { Home } from './pages/Home/Home'
+import { Home } from "./pages/Home/Home";
+
 function App() {
-
   return (
-
     <div className={styles.app}>
       <div className={styles.wrapper}>
-        <HeaderWidget></HeaderWidget>
-        <Header />
+        <header>
+          <HeaderWidget></HeaderWidget>
+          <Header />
+        </header>
         <div className={styles.title}>
           <Routes>
             <Route path="/catalog" element={<Catalog />} />

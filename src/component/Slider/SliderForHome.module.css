@@ -1,3 +1,12 @@
+.sliderContainer {
+    position: relative;
+    margin-top: -185px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
 .sliderItem {
     background-color: black;
 
@@ -30,6 +39,5 @@
     color: white;
     padding-left: 20%;
     padding-right: 20px;
-    top: 40%;
-
+    top: 50%;
 }

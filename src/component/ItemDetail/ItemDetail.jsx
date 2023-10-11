@@ -1,12 +1,10 @@
 import styles from "./ItemDetail.module.css";
 import { useLocation } from 'react-router-dom'
-
-
 export const ItemDetail = () => {
     const location = useLocation()
     const { item } = location.state
     return (
-        <div>
+        <div className={styles.itemDetail}>
             <h2 className={styles.title}>{item.title}</h2>
             <div className={styles.row}>
                 <div className={styles.photogallery}></div>
@@ -32,9 +30,7 @@ export const ItemDetail = () => {
                             <div>Ретардер: {item.retarder}</div>
                             <div>Круиз-контроль: {item.cruiseControl}</div>
                             <div>Кондиционер: {item.airConditioner}</div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
