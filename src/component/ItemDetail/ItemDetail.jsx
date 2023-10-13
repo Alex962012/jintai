@@ -1,18 +1,33 @@
 import styles from "./ItemDetail.module.css";
-import { useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { Gallery } from "../Gallery/Gallery";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { fetchProduct } from "../../redux/slices/products";
 export const ItemDetail = () => {
-    const location = useLocation()
-    const { item } = location.state
+    const [item, setItem] = useState({ info: [] })
+    const params = useParams();
+
+    const { product } = useSelector((state) => state.product);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProduct(params.id));
+    }, [dispatch, params.id]);
+    const data = product.item;
+    console.log(data)
     return (
         <div className={styles.itemDetail}>
-            <h2 className={styles.title}>{item.title}</h2>
+            <h2 className={styles.title}>{data.title}</h2>
             <div className={styles.row}>
-                <div className={styles.photogallery}></div>
+                <div className={styles.photogallery}>{/* <Gallery></Gallery> */}</div>
                 <div className={styles.specificationsBlock}>
-                    <div className={styles.specificationsTitle}>Технические характеристики</div>
+                    <div className={styles.specificationsTitle}>
+                        Технические характеристики
+                    </div>
                     <div className={styles.specifications}>
                         <div>
-                            <div>Модель двигателя: {item.modelEngine}</div>
+                            {/* <div>Модель двигателя: {item.modelEngine}</div>
                             <div>Мощность двигателя (кВт/л.с.) : {item.powerEngine}</div>
                             <div>Модель КПП: {item.gearboxModel}</div>
                             <div>Объем двигателя: {item.capacityEngine}</div>
@@ -29,7 +44,7 @@ export const ItemDetail = () => {
                             <div>Седло: {item.saddle}</div>
                             <div>Ретардер: {item.retarder}</div>
                             <div>Круиз-контроль: {item.cruiseControl}</div>
-                            <div>Кондиционер: {item.airConditioner}</div>
+                            <div>Кондиционер: {item.airConditioner}</div> */}
                         </div>
                     </div>
                 </div>

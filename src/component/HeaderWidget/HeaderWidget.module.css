@@ -13,7 +13,7 @@
     font-family: "Montserrat", Arial, sans-serif;
     display: flex;
     flex-direction: row;
-
+    padding: 0 20px;
     justify-content: center;
     align-items: center;
 }
@@ -21,8 +21,7 @@
 .widgetIconBox {
     display: flex;
     font-weight: 600;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     color: #fff;
     align-items: baseline;
 }

@@ -1,0 +1,278 @@
+.item {
+    margin: 20px 0;
+    width: 250px;
+    height: 400px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    padding: 26px 30px 11px 30px;
+    border: 1px solid black;
+
+}
+
+.itemTitleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1px 1px 1px;
+}
+
+.itemTitleContainer:hover {
+    cursor: pointer;
+}
+
+.itemPicture {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.itemPicture:hover {
+    transform: scale(1.01);
+}
+
+.itemName {
+    color: var(--base-color);
+    font-size: 28px;
+    font-weight: 600;
+    width: 100%;
+    font-family: "Cormorant Garamond",
+        serif;
+}
+
+.itemPrice {
+    color: var(--price-color);
+    font-size: 26px;
+    text-align: right;
+    font-weight: 600;
+    padding: 0 0 0 1px;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.itemLike {
+    background-image: url("https://cdn4.iconfinder.com/data/icons/basic-ui-2-line/32/heart-love-like-likes-loved-favorite-512.png");
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.itemLike:hover {
+    opacity: 0.8;
+}
+
+.itemLikeActive:hover {
+    opacity: 0.8;
+}
+
+.itemLikeActive {
+    background-image: url("https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-512.png");
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1374px) {
+    .item {
+        width: 100%;
+        max-width: 24vw;
+    }
+
+    .itemPicture {
+        width: 100%;
+        max-width: 24vw;
+        height: 34vw;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .item {
+        width: 300px;
+    }
+
+    .itemPicture {
+        width: 300px;
+        height: 360px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .item {
+        width: 265px;
+        max-width: 265px;
+    }
+
+    .itemPicture {
+        width: 265px;
+        max-width: 265px;
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width: 815px) {
+    .item {
+        width: 230px;
+    }
+
+    .itemPicture {
+        width: 230px;
+        height: 280px;
+    }
+
+    .itemName {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .item {
+        width: 200px;
+    }
+
+    .itemPicture {
+        width: 200px;
+        height: 260px;
+    }
+
+    .itemName {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 662px) {
+    .item {
+        width: 180px;
+    }
+
+    .itemPicture {
+        width: 180px;
+        height: 240px;
+    }
+
+    .itemName {
+        font-size: 18px;
+    }
+
+    .itemLike {
+        width: 30px;
+        height: 30px;
+    }
+
+    .itemLikeActive {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .item {
+        width: 160px;
+    }
+
+    .itemPicture {
+        width: 160px;
+        height: 240px;
+    }
+}
+
+@media only screen and (max-width: 527px) {
+    .item {
+        max-width: 145px;
+    }
+
+    .itemPicture {
+        max-width: 145px;
+        height: 220px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .item {
+        width: 220px;
+        max-width: 220px;
+    }
+
+    .itemPicture {
+        max-width: 220px;
+        width: 220px;
+        height: 280px;
+    }
+
+    .item:nth-child(3) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .item {
+        max-width: 200px;
+        width: 100%;
+    }
+
+    .itemPicture {
+        max-width: 200px;
+        height: 280px;
+    }
+}
+
+@media only screen and (max-width: 443px) {
+    .item {
+        max-width: 200px;
+    }
+}
+
+@media only screen and (max-width: 423px) {
+    .item {
+        max-width: 180px;
+    }
+
+    .itemPicture {
+        max-width: 180px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .itemPicture {
+        max-width: 180px;
+        height: 240px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .item:nth-child(3) {
+        display: block;
+    }
+
+    .item {
+        width: 95px;
+    }
+
+    .itemPicture {
+        width: 95px;
+        height: 140px;
+    }
+
+    .itemName {
+        font-size: 12px;
+    }
+
+    .itemPrice {
+        font-size: 12px;
+    }
+
+    .itemLike {
+        width: 25px;
+        height: 25px;
+    }
+
+    .itemLikeActive {
+        width: 25px;
+        height: 25px;
+    }
+}

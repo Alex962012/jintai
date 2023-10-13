@@ -1,0 +1,7 @@
+.typeCatalog {
+    margin: 0 auto;
+    width: 80%;
+    height: 800px;
+    display: flex;
+    justify-content: space-between;
+}
