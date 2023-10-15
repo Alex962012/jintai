@@ -24,11 +24,10 @@ export const DeleteType = () => {
             } catch (e) {
                 console.log(e);
             }
+        } else {
+            alert("Выберите товар для удаления");
         }
-        else {
-            alert('Выберите товар для удаления')
-        }
-    }
+    };
     const handleChange = (event) => {
         setType(event.target.value);
     };
@@ -38,9 +37,10 @@ export const DeleteType = () => {
             <form action="" className={styles.form} onSubmit={deleteType}>
                 <label htmlFor="types">Выберите категорию товара для удаления :</label>
                 <select id="types" name="types" select={type} onChange={handleChange}>
-                    <> <option >
-                        Выберите товар
-                    </option></>
+                    <>
+                        {" "}
+                        <option>Выберите товар</option>
+                    </>
                     {data.map((el) => (
                         <option value={el.id} key={el.id}>
                             {el.name}

@@ -23,7 +23,7 @@
 }
 
 iframe {
-    width: 55em;
+    width: 50em;
     height: 40em;
 }
 
@@ -35,13 +35,12 @@ iframe {
 .svg {
     width: 40px;
     height: 43px;
-    fill: orange
+    fill: orange;
 }
 
 .info {
     width: 400px;
     height: 200px;
-
     margin: 20px;
     display: flex;
     justify-content: center;

@@ -1,5 +1,5 @@
-import styles from './ItemTypes.module.css'
-import { Link } from 'react-router-dom'
+import styles from "./ItemTypes.module.css";
+import { Link } from "react-router-dom";
 export const ItemTypes = (props) => {
     return (
         <Link to={`/catalog/${[props.id]}`}>
@@ -14,6 +14,5 @@ export const ItemTypes = (props) => {
                 </div>
             </div>
         </Link>
-
-    )
-}
+    );
+};

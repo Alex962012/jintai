@@ -40,13 +40,12 @@
 
 .title {
     display: flex;
-    /* justify-content: space-between; */
     margin: 0 auto;
     flex-direction: column;
     width: 80%;
 }
 
-.subtitle {}
+
 
 .img {
     position: absolute;

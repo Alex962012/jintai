@@ -1,7 +1,6 @@
 import styles from "./Contacts.module.css";
 
 export const Contacts = () => {
-
     return (
         <div className={styles.container}>
             <div className={styles.item}>
@@ -14,7 +13,9 @@ export const Contacts = () => {
                 <div className={styles.icon}>
                     <img src="../../assets/icon-place.png" alt="" />
                 </div>
-                <div className={styles.txt}>г.Благовещенск <br /> с.Чигири ул.Центральная литер 8/1</div>
+                <div className={styles.txt}>
+                    г.Благовещенск <br /> с.Чигири ул.Центральная литер 8/1
+                </div>
             </div>
             <div className={styles.item}>
                 <div className={styles.icon}>

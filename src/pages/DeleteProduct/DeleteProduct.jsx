@@ -19,10 +19,9 @@ export const DeleteProduct = () => {
             if (product) {
                 await axios.delete(`/product/remove/${product}`);
                 alert("Товар удален");
-                setProduct(null)
-            }
-            else {
-                alert('Выберите товар для удаления')
+                setProduct(null);
+            } else {
+                alert("Выберите товар для удаления");
             }
         } catch (e) {
             console.log(e);
@@ -42,9 +41,10 @@ export const DeleteProduct = () => {
                     select={product}
                     onChange={handleChange}
                 >
-                    <> <option >
-                        Выберите товар
-                    </option></>
+                    <>
+                        {" "}
+                        <option>Выберите товар</option>
+                    </>
                     {data.map((el) => (
                         <option value={el.id} key={el.id}>
                             {el.title}

@@ -38,9 +38,8 @@ export const UpdateType = () => {
         e.preventDefault();
         const result = data.filter((i) => i.name === value);
         if (!type) {
-
-            alert('Выберите категорию для удаления')
-            return
+            alert("Выберите категорию для удаления");
+            return;
         }
         if (imageUrl < 1 || !imageUrl) {
             alert("Выберите фотографию");

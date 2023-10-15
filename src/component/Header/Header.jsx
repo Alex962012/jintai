@@ -1,18 +1,23 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import styles from './Header.module.css';
+import styles from "./Header.module.css";
 export const Header = () => {
     const [openBurger, setOpenBurger] = useState(false);
     return (
-
         <div className={styles.header}>
             <div className={styles.headerContent}>
                 <Link to="/" className={styles.logoContainer}>
                     <div className={styles.logo}>
-                        {/* <img src="../../logo512.png" alt="" className={styles.headerLogo} /> */}
-                        Цзинь Тай</div>
+                        Цзинь Тай
+                    </div>
                 </Link>
-                <nav className={openBurger ? `${styles.headerNav} ${styles.active}` : `${styles.headerNav}`}>
+                <nav
+                    className={
+                        openBurger
+                            ? `${styles.headerNav} ${styles.active}`
+                            : `${styles.headerNav}`
+                    }
+                >
                     <Link
                         to="/"
                         onClick={() => setOpenBurger(!openBurger)}
@@ -43,7 +48,11 @@ export const Header = () => {
                     </Link>
                 </nav>
                 <div
-                    className={openBurger ? `${styles.menuBtn} ${styles.active}` : `${styles.menuBtn}`}
+                    className={
+                        openBurger
+                            ? `${styles.menuBtn} ${styles.active}`
+                            : `${styles.menuBtn}`
+                    }
                     onClick={() => setOpenBurger(!openBurger)}
                 >
                     <span></span>
@@ -52,6 +61,5 @@ export const Header = () => {
                 </div>
             </div>
         </div>
-
     );
 };

@@ -16,7 +16,6 @@
 }
 
 .photogallery {
-
     width: 30em;
     height: 30em;
     padding-bottom: 50px;
@@ -34,7 +33,7 @@
 }
 
 .itemInfo {
-    display: flex
+    display: flex;
 }
 
 .itemInfoTitle {

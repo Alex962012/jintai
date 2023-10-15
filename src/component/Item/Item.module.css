@@ -37,14 +37,8 @@
     font-size: 28px;
     font-weight: 600;
     width: 100%;
-    font-family: "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 }
-
-
-
-
-
 
 @media only screen and (max-width: 1374px) {
     .orderItem {
@@ -127,15 +121,6 @@
         font-size: 18px;
     }
 
-    .itemLike {
-        width: 30px;
-        height: 30px;
-    }
-
-    .itemLikeActive {
-        width: 30px;
-        height: 30px;
-    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -231,17 +216,4 @@
         font-size: 12px;
     }
 
-    .itemPrice {
-        font-size: 12px;
-    }
-
-    .itemLike {
-        width: 25px;
-        height: 25px;
-    }
-
-    .itemLikeActive {
-        width: 25px;
-        height: 25px;
-    }
 }

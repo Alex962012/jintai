@@ -11,7 +11,6 @@ export const CreateProduct = () => {
     const [typeId, setTypeId] = useState(null);
     const dispatch = useDispatch();
     const [info, setInfo] = useState([]);
-    const [images, setImages] = useState([]);
     const [title, setTitle] = useState("");
     const inputFileRef = useRef(null);
 
@@ -161,9 +160,7 @@ export const CreateProduct = () => {
                         </div>
                     ))}
                 </div>
-                <div>
-                    {/* <button>Добавить изображение</button> */}
-                </div>
+                <div>{/* <button>Добавить изображение</button> */}</div>
                 <button onClick={addProduct}>Создать </button>
             </form>
         </div>

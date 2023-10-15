@@ -2,22 +2,12 @@ import axios from "../../axios";
 import styles from "./UpdateProduct.module.css";
 import { useRef, useState } from "react";
 export const UpdateProduct = () => {
-    const [value, setValue] = useState("");
-    const inputFileRef = useRef(null);
-    const [imageUrl, setImageUrl] = useState("");
-    const handleChangeFile = async (event) => {
-        try {
-            setImageUrl(event.target.files[0]);
-        } catch (e) { }
-    };
+
+
 
     const addType = async (e) => {
         e.preventDefault();
-        console.log(value, imageUrl);
-        const formData = new FormData()
-        formData.append('name', value)
-        formData.append('imageUrl', imageUrl)
-        axios.post('/type/add', formData)
+
     };
 
     return (

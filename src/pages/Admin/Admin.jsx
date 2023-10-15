@@ -1,47 +1,30 @@
-
-import { Link } from "react-router-dom"
-import styles from './Admin.module.css'
+import { Link } from "react-router-dom";
+import styles from "./Admin.module.css";
 export const Admin = () => {
-
     return (
         <div className={styles.adminPanel}>
             <div className={styles.buttonPanel}>
-                <Link to='/createType'>
-                    <div className={styles.button}>
-                        Добавить категорию товара
-                    </div>
+                <Link to="/createType">
+                    <div className={styles.button}>Добавить категорию товара</div>
                 </Link>
-                <Link to='/updateType'>
-                    <div className={styles.button}>
-                        Изменить категорию товара
-                    </div>
+                <Link to="/updateType">
+                    <div className={styles.button}>Изменить категорию товара</div>
                 </Link>
-                <Link to='/deleteType'>
-                    <div className={styles.button}>
-                        Удалить категорию товара
-                    </div>
+                <Link to="/deleteType">
+                    <div className={styles.button}>Удалить категорию товара</div>
                 </Link>
-
             </div>
             <div className={styles.buttonPanel}>
-                <Link to='/createProduct'>
-                    <div className={styles.button}>
-                        Добавить товар
-                    </div>
+                <Link to="/createProduct">
+                    <div className={styles.button}>Добавить товар</div>
                 </Link>
-                <Link to='/updateProduct'>
-                    <div className={styles.button}>
-                        Изменить товар
-                    </div>
+                <Link to="/updateProduct">
+                    <div className={styles.button}>Изменить товар</div>
                 </Link>
-                <Link to='/deleteProduct'>
-                    <div className={styles.button}>
-                        Удалить товар
-                    </div>
+                <Link to="/deleteProduct">
+                    <div className={styles.button}>Удалить товар</div>
                 </Link>
             </div>
-
-
         </div>
-    )
-}
+    );
+};

@@ -1,6 +1,5 @@
 import styles from "./ItemDetail.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Gallery } from "../Gallery/Gallery";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchProduct } from "../../redux/slices/products";
@@ -17,15 +16,17 @@ export const ItemDetail = () => {
 
     return (
         <div className={styles.itemDetail}>
-
             <div className={styles.title}>
-                <h2>{data.title}
-                </h2></div>
+                <h2>{data.title}</h2>
+            </div>
             <div className={styles.row}>
                 <div className={styles.photogallery}>
-                    <img src={process.env.REACT_APP_API_URL + data.imageUrl} alt="" className={styles.imageGallery} />
-
-                    {/* <Gallery></Gallery> */}</div>
+                    <img
+                        src={process.env.REACT_APP_API_URL + data.imageUrl}
+                        alt={data.title}
+                        className={styles.imageGallery}
+                    />
+                </div>
                 <div className={styles.specificationsBlock}>
                     <div className={styles.specificationsTitle}>
                         Технические характеристики
