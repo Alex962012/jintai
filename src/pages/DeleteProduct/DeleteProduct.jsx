@@ -1,40 +1,57 @@
 import axios from "../../axios";
 import styles from "./DeleteProduct.module.css";
-import { useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { fetchProducts } from "../../redux/slices/products";
+
 export const DeleteProduct = () => {
-    const [value, setValue] = useState("");
-    const inputFileRef = useRef(null);
-    const [imageUrl, setImageUrl] = useState("");
-    const handleChangeFile = async (event) => {
-        try {
-            setImageUrl(event.target.files[0]);
-        } catch (e) { }
-    };
-
-    const addType = async (e) => {
+    const { products } = useSelector((state) => state.products);
+    const dispatch = useDispatch();
+    const [product, setProduct] = useState(null);
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [dispatch, product]);
+    console.log(product);
+    const data = products.items;
+    const deleteProduct = async (e) => {
         e.preventDefault();
-        console.log(value, imageUrl);
-        const formData = new FormData()
-        formData.append('name', value)
-        formData.append('imageUrl', imageUrl)
-        axios.post('/type/add', formData)
+        try {
+            if (product) {
+                await axios.delete(`/product/remove/${product}`);
+                alert("Товар удален");
+                setProduct(null)
+            }
+            else {
+                alert('Выберите товар для удаления')
+            }
+        } catch (e) {
+            console.log(e);
+        }
     };
-
+    const handleChange = (event) => {
+        setProduct(event.target.value);
+    };
     return (
         <div className={styles.container}>
             <h2>Удаление товара</h2>
-            <form action="" className={styles.form} onSubmit={addType}>
-                {/* <label htmlFor="name">Введите название товара</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    placeholder="Погрузчик"
-                />
-                <input ref={inputFileRef} onChange={handleChangeFile} type="file" />
-                <button type="submit">Создать </button> */}
+            <form action="" className={styles.form} onSubmit={deleteProduct}>
+                <label htmlFor="products">Выберите товар для удаления :</label>
+                <select
+                    id="products"
+                    name="products"
+                    select={product}
+                    onChange={handleChange}
+                >
+                    <> <option >
+                        Выберите товар
+                    </option></>
+                    {data.map((el) => (
+                        <option value={el.id} key={el.id}>
+                            {el.title}
+                        </option>
+                    ))}
+                </select>
+                <button type="submit">Удалить товар </button>
             </form>
         </div>
     );

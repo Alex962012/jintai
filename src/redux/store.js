@@ -1,12 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { typesReducer } from './slices/types'
-import { productsReducer } from './slices/products'
+import { productsIdReducer } from './slices/products'
 import { productReducer } from './slices/products'
+import { productsReducer } from './slices/products'
 const store = configureStore({
     reducer: {
         types: typesReducer,
-        products: productsReducer,
-        product: productReducer
+        productsId: productsIdReducer,
+        product: productReducer,
+        products: productsReducer
+
     },
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({

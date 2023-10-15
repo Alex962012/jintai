@@ -4,16 +4,15 @@ import styles from './Catalog.module.css'
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../redux/slices/products';
+import { fetchProductsId } from '../../redux/slices/products';
 export const Catalog = () => {
     const params = useParams()
 
-    const { products } = useSelector(state => state.products)
+    const { productsId } = useSelector(state => state.productsId)
     const dispatch = useDispatch()
-    const data = products.items
-
+    const data = productsId.items
     useEffect(() => {
-        dispatch(fetchProducts(params.id))
+        dispatch(fetchProductsId(params.id))
     }, [dispatch, params.id])
 
     return (

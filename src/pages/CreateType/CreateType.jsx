@@ -1,23 +1,72 @@
 import axios from "../../axios";
 import styles from "./CreateType.module.css";
-import { useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useRef } from "react";
+import { fetchTypes } from "../../redux/slices/types";
 export const CreateType = () => {
+
+    const { types } = useSelector((state) => state.types);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchTypes());
+    }, [dispatch]);
+    const data = types.items;
     const [value, setValue] = useState("");
     const inputFileRef = useRef(null);
     const [imageUrl, setImageUrl] = useState("");
+
+
     const handleChangeFile = async (event) => {
         try {
             setImageUrl(event.target.files[0]);
-        } catch (e) { }
+        } catch (e) {
+            console.log(e)
+        }
     };
+
+    const isValidFileUploaded = (file) => {
+        const validExtensions = ['png', 'jpeg', 'jpg']
+        const fileExtension = file.type.split('/')[1]
+        return validExtensions.includes(fileExtension)
+    }
 
     const addType = async (e) => {
         e.preventDefault();
-        console.log(value, imageUrl);
-        const formData = new FormData()
-        formData.append('name', value)
-        formData.append('imageUrl', imageUrl)
-        axios.post('/type/add', formData)
+        const result = data.filter((i) => i.name === value)
+
+        if (imageUrl < 1 || !imageUrl) {
+            alert('Выберите фотографию')
+            return;
+        }
+        if (value < 1 || !value) {
+            alert('Введите название')
+            return
+        }
+
+        if (result.length > 0) {
+            alert('Такое название уже есть')
+            return
+        }
+        if (isValidFileUploaded(imageUrl)) {
+            const formData = new FormData()
+            formData.append('name', value)
+            formData.append('imageUrl', imageUrl)
+            try {
+                axios.post('/type/add', formData)
+                alert('Тип создан')
+                setValue('')
+
+            } catch (response) {
+                console.log(response)
+            }
+
+        } else {
+            console.log('ddd')
+        }
+
+
     };
 
     return (

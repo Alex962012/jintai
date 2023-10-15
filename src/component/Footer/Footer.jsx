@@ -8,7 +8,7 @@ export const Footer = () => {
                         Все права защищены!
                     </div>
                     <div className="footer-right">
-                        Copyright © 2023 JINTAI.RU Поставки спецтехники из Китая
+                        Copyright © 2023 JINTAI.RU Спецтехника из Китая
                     </div>
                 </div>
             </div>
