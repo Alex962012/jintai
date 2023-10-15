@@ -3,7 +3,7 @@ import styles from "./DeleteProduct.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchProducts } from "../../redux/slices/products";
-
+import { Link } from "react-router-dom";
 export const DeleteProduct = () => {
     const { products } = useSelector((state) => state.products);
     const dispatch = useDispatch();
@@ -32,10 +32,14 @@ export const DeleteProduct = () => {
     };
     return (
         <div className={styles.container}>
-            <h2>Удаление товара</h2>
+            <div className={styles.title}>
+                <h2>Удаление товара</h2></div>
+            <div>
+                <Link to='/admin' className={styles.back}>Назад</Link>
+            </div>
             <form action="" className={styles.form} onSubmit={deleteProduct}>
-                <label htmlFor="products">Выберите товар для удаления :</label>
-                <select
+                <label htmlFor="products" className={styles.name}>Выберите товар для удаления :</label>
+                <select className={styles.select}
                     id="products"
                     name="products"
                     select={product}
@@ -51,7 +55,7 @@ export const DeleteProduct = () => {
                         </option>
                     ))}
                 </select>
-                <button type="submit">Удалить товар </button>
+                <button type="submit" className={styles.button}>Удалить товар </button>
             </form>
         </div>
     );

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 import { fetchTypes } from "../../redux/slices/types";
+import { Link } from "react-router-dom";
 export const UpdateType = () => {
     const [type, setType] = useState(null);
     const { types } = useSelector((state) => state.types);
@@ -74,6 +75,9 @@ export const UpdateType = () => {
     return (
         <div className={styles.container}>
             <h2>Изменить категории товара</h2>
+            <div>
+                <Link to='/admin' className={styles.back}>Назад</Link>
+            </div>
             <form action="" className={styles.form} onSubmit={addType}>
                 <label htmlFor="types">Выберите категорию товара для изменения :</label>
                 <select id="types" name="types" select={type} onChange={handleChange}>

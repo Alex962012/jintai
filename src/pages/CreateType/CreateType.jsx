@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 import { fetchTypes } from "../../redux/slices/types";
+import { Link } from "react-router-dom";
 export const CreateType = () => {
     const { types } = useSelector((state) => state.types);
     const dispatch = useDispatch();
@@ -67,6 +68,9 @@ export const CreateType = () => {
         <div className={styles.container}>
             <div className={styles.title}>
                 <h2>Создание категории товара</h2>
+            </div>
+            <div>
+                <Link to='/admin' className={styles.back}>Назад</Link>
             </div>
             <form action="" className={styles.form} onSubmit={addType}>
                 <label htmlFor="name" className={styles.name}>

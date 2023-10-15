@@ -11,3 +11,18 @@
     border: 1px solid;
     width: 40%;
 }
+
+.back {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20em;
+    height: 3em;
+    border-radius: 1.1em;
+    font-size: 0.8em;
+
+    letter-spacing: 1px;
+    color: white;
+    background: #f9b233;
+}

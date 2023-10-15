@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { fetchTypes } from "../../redux/slices/types";
 import { fetchProducts } from "../../redux/slices/products";
 import axios from "../../axios";
+import { Link } from "react-router-dom";
 export const CreateProduct = () => {
     const { types } = useSelector((state) => state.types);
     const { products } = useSelector((state) => state.products);
@@ -98,9 +99,13 @@ export const CreateProduct = () => {
 
     return (
         <div className={styles.container}>
-            <h2>Создание товара</h2>
+            <div className={styles.containerTitle}>
+                <h2>Создание товара</h2></div>
+            <div>
+                <Link to='/admin' className={styles.back}>Назад</Link>
+            </div>
             <form action="" className={styles.form}>
-                <label htmlFor="title">Введите название товара</label>
+                <label htmlFor="title" className={styles.title}>Введите название товара</label>
                 <input
                     type="text"
                     id="title"
@@ -109,7 +114,7 @@ export const CreateProduct = () => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <label htmlFor="types">Выберите категорию товара:</label>
+                <label htmlFor="types" className={styles.types}>Выберите категорию товара:</label>
                 <select
                     id="types"
                     name="types"
@@ -128,11 +133,11 @@ export const CreateProduct = () => {
                 </select>
 
                 <input ref={inputFileRef} onChange={handleChangeFile} type="file" />
-                <div>
-                    <button onClick={addInfo}>Добавить новое свойство</button>
+                <div >
+                    <button onClick={addInfo} className={styles.addButton}>Добавить новое свойство</button>
                     {info.map((i) => (
-                        <div key={i.number}>
-                            <label htmlFor="name">Введите название свойства</label>
+                        <div key={i.number} className={styles.infoContainer}>
+                            <label htmlFor="name" className={styles.name}>Введите название свойства</label>
                             <input
                                 value={i.title}
                                 type="text"
@@ -141,7 +146,7 @@ export const CreateProduct = () => {
                                 onChange={(e) => changeInfo("title", e.target.value, i.number)}
                                 placeholder="Модель двигателя"
                             />
-                            <label htmlFor="name">Введите описание свойства</label>
+                            <label htmlFor="name" className={styles.name}>Введите описание свойства</label>
                             <input
                                 value={i.description}
                                 type="text"
@@ -152,7 +157,7 @@ export const CreateProduct = () => {
                                     changeInfo("description", e.target.value, i.number)
                                 }
                             />
-                            <div>
+                            <div className={styles.deleteButton}>
                                 <button onClick={(e) => removeInfo(e, i.number)}>
                                     Удалить
                                 </button>

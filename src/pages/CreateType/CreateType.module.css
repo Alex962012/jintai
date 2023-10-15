@@ -4,6 +4,25 @@
     height: 500px;
 }
 
+.back {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20em;
+    height: 3em;
+    border-radius: 1.1em;
+    font-size: 0.8em;
+
+    letter-spacing: 1px;
+    color: white;
+    background: #f9b233;
+}
+
+.back:hover {
+    opacity: 0.9;
+}
+
 .title {
     display: flex;
     justify-content: center;

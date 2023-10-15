@@ -11,3 +11,34 @@
     border: 1px solid;
     width: 40%;
 }
+
+.types {
+    padding: 20px;
+    text-align: center;
+}
+
+.select {
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.back {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20em;
+    height: 3em;
+    border-radius: 1.1em;
+    font-size: 0.8em;
+
+    letter-spacing: 1px;
+    color: white;
+    background: #f9b233;
+}
