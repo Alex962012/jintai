@@ -1,29 +1,40 @@
-import { useLocation, useNavigate } from "react-router-dom"
-import { useAuth } from "../../hook/useAuth"
-import styles from './Auth.module.css'
+
+import { useDispatch, useSelector } from "react-redux";
+import styles from "./Auth.module.css";
+import { fetchAuth } from "../../redux/slices/auth";
+import { useState } from "react";
+import { selectIsAuth } from "../../redux/slices/auth";
+import { Navigate } from "react-router-dom";
+
 export const Auth = () => {
-    const navigate = useNavigate()
-    const location = useLocation()
-    const { signin } = useAuth()
 
-    const fromPage = location.state?.from?.pathname || '/'
+    const dispatch = useDispatch()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const isAuth = useSelector(selectIsAuth);
+    const handlerSubmit = async (event) => {
+        event.preventDefault();
+        dispatch(fetchAuth({ email, password }))
+    };
 
-    const handlerSubmit = (event) => {
-        event.preventDefault()
-        const form = event.target
-        const user = form.username
-        signin(user, () => navigate(fromPage))
+    if (isAuth) {
+        return <Navigate to='/admin' />
     }
 
     return (
         <div className={styles.authContainer}>
             <h1>Вход в аккаунт</h1>
             <form onSubmit={handlerSubmit}>
-                <label >
-                    <input name="username" />
-                </label>
+                <div>
+                    <label>Введите email </label>
+                    <input name="username" value={email} onChange={e => setEmail(e.target.value)} />
+                </div>
+                <div>
+                    <label>Введите пароль</label>
+                    <input name="password" value={password} onChange={e => setPassword(e.target.value)} />
+                </div>
                 <button type="submit">Вход</button>
             </form>
         </div>
-    )
-}
+    );
+};

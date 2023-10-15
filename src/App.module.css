@@ -18,6 +18,11 @@
     /* border-radius: 20px; */
 }
 
+h2 {
+    font-family: 'Noto Serif Display', serif;
+    ;
+}
+
 a {
     text-decoration: none;
 }

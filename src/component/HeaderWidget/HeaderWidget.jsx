@@ -2,7 +2,7 @@ import styles from "./HeaderWidget.module.css";
 export const HeaderWidget = () => {
     return (
         <div className={styles.headerWidget}>
-            <div className={styles.widgetIconBox}>
+            {/* <div className={styles.widgetIconBox}>
                 <div className={styles.iconBox}>
                     <i className={styles.headphonesBox}>
                         <svg
@@ -49,7 +49,7 @@ export const HeaderWidget = () => {
             </div>
             <div className={styles.widgetIconBox}>
                 <a target="">Заказать звонок</a>
-            </div>
+            </div> */}
         </div>
     );
 };

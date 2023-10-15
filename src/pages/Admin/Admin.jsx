@@ -1,10 +1,8 @@
-import { useAuth } from "../../hook/useAuth"
-import { useNavigate } from "react-router-dom"
+
 import { Link } from "react-router-dom"
 import styles from './Admin.module.css'
 export const Admin = () => {
-    const { signout } = useAuth()
-    const navigate = useNavigate()
+
     return (
         <div className={styles.adminPanel}>
             <div className={styles.buttonPanel}>
@@ -42,7 +40,7 @@ export const Admin = () => {
                     </div>
                 </Link>
             </div>
-            <button onClick={() => signout(() => navigate('/', { replace: true }))}>Выход</button>
+
 
         </div>
     )

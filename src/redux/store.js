@@ -3,12 +3,14 @@ import { typesReducer } from './slices/types'
 import { productsIdReducer } from './slices/products'
 import { productReducer } from './slices/products'
 import { productsReducer } from './slices/products'
+import { authReducer } from './slices/auth'
 const store = configureStore({
     reducer: {
         types: typesReducer,
         productsId: productsIdReducer,
         product: productReducer,
-        products: productsReducer
+        products: productsReducer,
+        auth: authReducer
 
     },
     middleware: getDefaultMiddleware =>

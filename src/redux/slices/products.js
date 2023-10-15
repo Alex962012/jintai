@@ -18,7 +18,6 @@ export const fetchProduct = createAsyncThunk(
     "product/fetchProduct",
     async (id) => {
         const data = await axios.get(`/product/${id}`);
-
         return data;
     }
 );

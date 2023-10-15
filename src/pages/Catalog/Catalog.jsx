@@ -18,10 +18,11 @@ export const Catalog = () => {
     return (
         <div className={styles.orderSection}>
             <div className={styles.orderSectionTitle}>
-                Каталог
-
+                <h4>
+                    Каталог
+                </h4>
             </div>
-            <Link to='/admin'>Добавить товар</Link>
+            <Link to='/auth'>Добавить товар</Link>
             <div className={styles.contentOrder}>
                 {data.map((item) => (<Item {...item} key={item.id} />))}
             </div>

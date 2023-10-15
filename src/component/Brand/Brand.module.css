@@ -5,11 +5,24 @@
 }
 
 .brandTitle {
-    margin: 0 auto;
-    width: 30%;
+    display: flex;
+    justify-content: center;
+    color: rgb(57, 56, 56);
+
 }
 
 .brandSubtitle {
+    display: flex;
+    justify-content: center;
+    color: rgb(57, 56, 56);
+
+}
+
+.brandContent {
+    width: 70%;
+    padding: 40px;
     margin: 0 auto;
-    width: 30%;
+    -webkit-box-shadow: 4px 4px 8px 11px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 11px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 11px rgba(34, 60, 80, 0.2);
 }

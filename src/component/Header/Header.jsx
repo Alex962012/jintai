@@ -8,7 +8,9 @@ export const Header = () => {
         <div className={styles.header}>
             <div className={styles.headerContent}>
                 <Link to="/" className={styles.logoContainer}>
-                    <div className={styles.logo}>Цзинь Тай</div>
+                    <div className={styles.logo}>
+                        {/* <img src="../../logo512.png" alt="" className={styles.headerLogo} /> */}
+                        Цзинь Тай</div>
                 </Link>
                 <nav className={openBurger ? `${styles.headerNav} ${styles.active}` : `${styles.headerNav}`}>
                     <Link
@@ -30,14 +32,14 @@ export const Header = () => {
                         onClick={() => setOpenBurger(!openBurger)}
                         className={styles.navItem}
                     >
-                        О бренде
+                        О компании
                     </Link>
                     <Link
-                        to="/feedback"
+                        to="/company"
                         onClick={() => setOpenBurger(!openBurger)}
                         className={styles.navItem}
                     >
-                        Обратная связь
+                        Контакты
                     </Link>
                 </nav>
                 <div

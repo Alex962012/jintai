@@ -4,6 +4,12 @@
     margin: 0 auto;
 }
 
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6em;
+}
+
 .row {
     display: flex;
     justify-content: space-around;
@@ -11,8 +17,8 @@
 
 .photogallery {
 
-    width: 350px;
-    height: 350px;
+    width: 30em;
+    height: 30em;
     padding-bottom: 50px;
 }
 
@@ -24,6 +30,7 @@
 .specificationsTitle {
     font-size: 25px;
     font-weight: 800;
+    padding: 20px 0;
 }
 
 .itemInfo {
@@ -32,16 +39,18 @@
 
 .itemInfoTitle {
     padding-right: 20px;
+    padding-top: 10px;
     font-size: 20px;
     font-weight: 600;
 }
 
 .itemInfoDescription {
+    padding-top: 10px;
     font-size: 20px;
 }
 
 .imageGallery {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+    width: 27em;
+    height: 27em;
+    object-fit: cover;
 }

@@ -14,9 +14,13 @@ export const ItemDetail = () => {
         dispatch(fetchProduct(params.id));
     }, [dispatch, params.id]);
     const data = product.item;
+
     return (
         <div className={styles.itemDetail}>
-            <h2 className={styles.title}>{data.title}</h2>
+
+            <div className={styles.title}>
+                <h2>{data.title}
+                </h2></div>
             <div className={styles.row}>
                 <div className={styles.photogallery}>
                     <img src={process.env.REACT_APP_API_URL + data.imageUrl} alt="" className={styles.imageGallery} />

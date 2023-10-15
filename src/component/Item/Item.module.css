@@ -2,6 +2,11 @@
     margin: 20px 0;
     width: 350px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: white;
+    -webkit-box-shadow: 0px 4px 8px -1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 8px -1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 8px -1px rgba(34, 60, 80, 0.2);
+    padding: 20px;
 }
 
 .itemTitleContainer {
@@ -36,40 +41,10 @@
         serif;
 }
 
-.itemPrice {
-    color: var(--price-color);
-    font-size: 26px;
-    text-align: right;
-    font-weight: 600;
-    padding: 0 0 0 1px;
-    font-family: "Cormorant Garamond", serif;
-}
 
-.itemLike {
-    background-image: url("https://cdn4.iconfinder.com/data/icons/basic-ui-2-line/32/heart-love-like-likes-loved-favorite-512.png");
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    cursor: pointer;
-}
 
-.itemLike:hover {
-    opacity: 0.8;
-}
 
-.itemLikeActive:hover {
-    opacity: 0.8;
-}
 
-.itemLikeActive {
-    background-image: url("https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-512.png");
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    cursor: pointer;
-}
 
 @media only screen and (max-width: 1374px) {
     .orderItem {
