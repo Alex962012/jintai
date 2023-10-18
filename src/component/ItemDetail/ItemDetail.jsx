@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchProduct } from "../../redux/slices/products";
+import { Gallery } from "../Gallery/Gallery";
 export const ItemDetail = () => {
     const params = useParams();
 
@@ -13,7 +14,7 @@ export const ItemDetail = () => {
         dispatch(fetchProduct(params.id));
     }, [dispatch, params.id]);
     const data = product.item;
-
+    const isProductLoading = product.status === "loading";
     return (
         <div className={styles.itemDetail}>
             <div className={styles.title}>
@@ -21,11 +22,7 @@ export const ItemDetail = () => {
             </div>
             <div className={styles.row}>
                 <div className={styles.photogallery}>
-                    <img
-                        src={process.env.REACT_APP_API_URL + data.imageUrl}
-                        alt={data.title}
-                        className={styles.imageGallery}
-                    />
+                    {isProductLoading ? "" : <Gallery item={data.imageUrl} />}
                 </div>
                 <div className={styles.specificationsBlock}>
                     <div className={styles.specificationsTitle}>
@@ -35,7 +32,7 @@ export const ItemDetail = () => {
                         <div>
                             {data.info ? (
                                 data.info.map((el) => (
-                                    <div key={el.id} className={styles.itemInfo}>
+                                    <div key={el._id} className={styles.itemInfo}>
                                         <div className={styles.itemInfoTitle}>{el.title}:</div>
                                         <div className={styles.itemInfoDescription}>
                                             {el.description}

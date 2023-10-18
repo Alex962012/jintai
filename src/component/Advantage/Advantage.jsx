@@ -6,8 +6,7 @@ export const Advantage = () => {
                 <div className={styles.item}>
                     <div className={styles.icon}>
                         <svg
-                            width="58"
-                            height="58"
+
                             viewBox="0 0 58 58"
                             xmlns="http://www.w3.org/2000/svg"
                         >
@@ -16,14 +15,15 @@ export const Advantage = () => {
                         </svg>
                     </div>
                     <div className={styles.txt}>
-                        <div>Наличие техники в РФ</div>
+                        <div className={styles.txt}>
+                            <div>Наличие техники в РФ</div>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.item}>
                     <div className={styles.icon}>
                         <svg
-                            width="64"
-                            height="64"
+
                             viewBox="0 0 64 64"
                             xmlns="http://www.w3.org/2000/svg"
                         >
@@ -60,8 +60,7 @@ export const Advantage = () => {
                 <div className={styles.item}>
                     <div className={styles.icon}>
                         <svg
-                            width="64"
-                            height="64"
+
                             viewBox="0 0 64 64"
                             xmlns="http://www.w3.org/2000/svg"
                         >

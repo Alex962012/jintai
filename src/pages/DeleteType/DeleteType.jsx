@@ -9,6 +9,7 @@ export const DeleteType = () => {
     const { types } = useSelector((state) => state.types);
     const dispatch = useDispatch();
     const [type, setType] = useState(null);
+    console.log(types)
     useEffect(() => {
         dispatch(fetchTypes());
     }, [dispatch, type]);
@@ -49,7 +50,7 @@ export const DeleteType = () => {
                         <option>Выберите товар</option>
                     </>
                     {data.map((el) => (
-                        <option value={el.id} key={el.id}>
+                        <option value={el._id} key={el._id}>
                             {el.name}
                         </option>
                     ))}

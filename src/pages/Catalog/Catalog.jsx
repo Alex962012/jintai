@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsId } from "../../redux/slices/products";
 export const Catalog = () => {
     const params = useParams();
-
     const { productsId } = useSelector((state) => state.productsId);
     const dispatch = useDispatch();
     const data = productsId.items;
@@ -15,6 +14,7 @@ export const Catalog = () => {
         dispatch(fetchProductsId(params.id));
     }, [dispatch, params.id]);
 
+    console.log(productsId)
     return (
         <div className={styles.orderSection}>
             <div className={styles.orderSectionTitle}>
@@ -23,7 +23,7 @@ export const Catalog = () => {
             <Link to="/auth">Добавить товар</Link>
             <div className={styles.contentOrder}>
                 {data.map((item) => (
-                    <Item {...item} key={item.id} />
+                    <Item {...item} key={item._id} />
                 ))}
             </div>
         </div>

@@ -15,30 +15,35 @@ export const CreateProduct = () => {
     const [title, setTitle] = useState("");
     const inputFileRef = useRef(null);
 
-    const [imageUrl, setImageUrl] = useState("");
+    const [imageUrl, setImageUrl] = useState([]);
     useEffect(() => {
         dispatch(fetchTypes());
         dispatch(fetchProducts());
     }, [dispatch]);
     const data = types.items;
-    const productsData = products.items;
+    let productsData;
+    let result;
+    if (products.items) {
+        productsData = products.items;
+        result = productsData.filter((i) => i.title === title);
+    }
+
     const handleChangeType = (event) => {
         setTypeId(event.target.value);
     };
 
     const handleChangeFile = async (event) => {
         try {
-            setImageUrl(event.target.files[0]);
+            setImageUrl([...imageUrl, ...event.target.files]);
         } catch (e) {
             console.log(e);
         }
     };
-
-    const isValidFileUploaded = (file) => {
-        const validExtensions = ["png", "jpeg", "jpg"];
-        const fileExtension = file.type.split("/")[1];
-        return validExtensions.includes(fileExtension);
-    };
+    // const isValidFileUploaded = (file) => {
+    //     const validExtensions = ["png", "jpeg", "jpg"];
+    //     const fileExtension = file.type.split("/")[1];
+    //     return validExtensions.includes(fileExtension);
+    // };
 
     const addInfo = (e) => {
         e.preventDefault();
@@ -55,11 +60,10 @@ export const CreateProduct = () => {
             info.map((i) => (i.number === number ? { ...i, [key]: value } : i))
         );
     };
-
+    console.log(imageUrl.length);
     const addProduct = async (e) => {
         e.preventDefault();
 
-        const result = productsData.filter((i) => i.title === title);
         if (!typeId) {
             alert("Выберите категорию");
             return;
@@ -73,39 +77,55 @@ export const CreateProduct = () => {
             return;
         }
 
-        if (result.length > 0) {
+        if (result && result.length > 0) {
             alert("Такое название уже есть");
             return;
         }
-        if (isValidFileUploaded(imageUrl)) {
-            const formData = new FormData();
-            formData.append("title", title);
-            formData.append("typeId", typeId);
-            formData.append("imageUrl", imageUrl);
-            formData.append("info", JSON.stringify(info));
 
-            try {
-                const { data } = await axios.post("/product/add", formData);
-                console.log(data);
-                alert("Товар создан");
-                setTitle("");
-            } catch (response) {
-                console.log(response);
+        // if (isValidFileUploaded(imageUrl)) {
+        const formData = new FormData();
+        formData.append("title", title);
+        formData.append("typeId", typeId);
+        if (imageUrl.length > 1) {
+            for (let i = 0; i < imageUrl.length; i++) {
+                formData.append("imageUrl", imageUrl[i]);
+                console.log(imageUrl);
             }
-        } else {
-            console.log("ddd");
+
         }
+        if (imageUrl.length === 1) {
+            formData.append("imageUrl", imageUrl);
+        }
+
+        formData.append("info", JSON.stringify(info));
+        try {
+            const { data } = await axios.post("/product/add", formData);
+            console.log(data);
+
+            alert("Товар создан");
+            setTitle("");
+        } catch (response) {
+            console.log(response);
+        }
+        // } else {
+        //     console.log("ddd");
+        // }
     };
 
     return (
         <div className={styles.container}>
             <div className={styles.containerTitle}>
-                <h2>Создание товара</h2></div>
+                <h2>Создание товара</h2>
+            </div>
             <div>
-                <Link to='/admin' className={styles.back}>Назад</Link>
+                <Link to="/admin" className={styles.back}>
+                    Назад
+                </Link>
             </div>
             <form action="" className={styles.form}>
-                <label htmlFor="title" className={styles.title}>Введите название товара</label>
+                <label htmlFor="title" className={styles.title}>
+                    Введите название товара
+                </label>
                 <input
                     type="text"
                     id="title"
@@ -114,7 +134,9 @@ export const CreateProduct = () => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <label htmlFor="types" className={styles.types}>Выберите категорию товара:</label>
+                <label htmlFor="types" className={styles.types}>
+                    Выберите категорию товара:
+                </label>
                 <select
                     id="types"
                     name="types"
@@ -126,18 +148,27 @@ export const CreateProduct = () => {
                         <option>Выберите категорию</option>
                     </>
                     {data.map((el) => (
-                        <option value={el.id} key={el.id}>
+                        <option value={el._id} key={el._id}>
                             {el.name}
                         </option>
                     ))}
                 </select>
 
-                <input ref={inputFileRef} onChange={handleChangeFile} type="file" />
-                <div >
-                    <button onClick={addInfo} className={styles.addButton}>Добавить новое свойство</button>
+                <input
+                    ref={inputFileRef}
+                    onChange={handleChangeFile}
+                    type="file"
+                    multiple
+                />
+                <div>
+                    <button onClick={addInfo} className={styles.addButton}>
+                        Добавить новое свойство
+                    </button>
                     {info.map((i) => (
                         <div key={i.number} className={styles.infoContainer}>
-                            <label htmlFor="name" className={styles.name}>Введите название свойства</label>
+                            <label htmlFor="name" className={styles.name}>
+                                Введите название свойства
+                            </label>
                             <input
                                 value={i.title}
                                 type="text"
@@ -146,7 +177,9 @@ export const CreateProduct = () => {
                                 onChange={(e) => changeInfo("title", e.target.value, i.number)}
                                 placeholder="Модель двигателя"
                             />
-                            <label htmlFor="name" className={styles.name}>Введите описание свойства</label>
+                            <label htmlFor="name" className={styles.name}>
+                                Введите описание свойства
+                            </label>
                             <input
                                 value={i.description}
                                 type="text"
@@ -165,7 +198,6 @@ export const CreateProduct = () => {
                         </div>
                     ))}
                 </div>
-                <div>{/* <button>Добавить изображение</button> */}</div>
                 <button onClick={addProduct}>Создать </button>
             </form>
         </div>

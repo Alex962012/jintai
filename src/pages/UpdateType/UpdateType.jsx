@@ -70,11 +70,13 @@ export const UpdateType = () => {
         } else {
             console.log("ddd");
         }
-    };
+    }
 
     return (
         <div className={styles.container}>
-            <h2>Изменить категории товара</h2>
+            <div className={styles.containerTitle}>
+                <h2>Изменить категории товара</h2>
+            </div>
             <div>
                 <Link to='/admin' className={styles.back}>Назад</Link>
             </div>
@@ -86,7 +88,7 @@ export const UpdateType = () => {
                         <option>Выберите категорию</option>
                     </>
                     {data.map((el) => (
-                        <option value={el.id} key={el.id}>
+                        <option value={el._id} key={el._id}>
                             {el.name}
                         </option>
                     ))}

@@ -50,7 +50,7 @@ export const DeleteProduct = () => {
                         <option>Выберите товар</option>
                     </>
                     {data.map((el) => (
-                        <option value={el.id} key={el.id}>
+                        <option value={el._id} key={el._id}>
                             {el.title}
                         </option>
                     ))}

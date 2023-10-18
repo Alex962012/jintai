@@ -10,10 +10,13 @@
 
 
 .wrapper {
-
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     /* max-width: 1480px; */
     /* width: 98%; */
     margin: 0 auto;
+    min-height: 100vh;
     /* border: 2px solid var(--price-color); */
     /* border-radius: 20px; */
 }
@@ -25,6 +28,10 @@ h2 {
 
 a {
     text-decoration: none;
+}
+
+.title {
+    flex: 1 1 auto;
 }
 
 .title-section--title {

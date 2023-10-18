@@ -1,15 +1,66 @@
 .container {
     margin: 0 auto;
     width: 80%;
-    height: 500px;
+    padding: 60px 0;
+}
+
+.containerTitle {
+    display: flex;
+    justify-content: center;
 }
 
 .form {
+    padding: 20px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     border: 1px solid;
     width: 40%;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.types {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.addButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.name {
+    padding: 10px;
+    text-align: center;
+}
+
+input {
+    padding: 20px;
+}
+
+button {
+    padding: 20px;
+    margin: 10px;
+}
+
+.deleteButton {
+    display: flex;
+    justify-content: center;
 }
 
 .back {

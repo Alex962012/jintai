@@ -12,7 +12,7 @@ export const TypesCatalog = () => {
         dispatch(fetchTypes());
     }, [dispatch]);
     const data = types.items;
-
+    console.log(data)
     return (
         <div className={styles.typeCatalog}>
             {data.map((obj, index) => (

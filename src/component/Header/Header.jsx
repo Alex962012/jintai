@@ -8,6 +8,8 @@ export const Header = () => {
             <div className={styles.headerContent}>
                 <Link to="/" className={styles.logoContainer}>
                     <div className={styles.logo}>
+                        <img className={styles.headerLogo} src="../../logo.png" alt="" />
+
                         Цзинь Тай
                     </div>
                 </Link>

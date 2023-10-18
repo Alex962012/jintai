@@ -4,8 +4,8 @@ export const Footer = () => {
         <footer>
             <div className="footer-wrapper">
                 <div className={styles.footerContent}>
-                    <div className="footer-left">Все права защищены!</div>
-                    <div className="footer-right">
+                    <div className={styles.footerLeft}>Все права защищены!</div>
+                    <div className={styles.footerRight}>
                         Copyright © 2023 JINTAI.RU Спецтехника из Китая
                     </div>
                 </div>

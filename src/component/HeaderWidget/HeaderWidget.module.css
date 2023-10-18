@@ -46,3 +46,15 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+@media only screen and (max-width: 509px) {
+    .headerWidget {
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 481px) {
+    .headerWidget {
+        display: none;
+    }
+}

@@ -1,4 +1,5 @@
 header {
+    /* background-color: red; */
     background-color: var(--header-color);
     padding: 20px 0;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
@@ -18,13 +19,18 @@ header {
 }
 
 .logo {
-    background-size: contain;
+    display: flex;
+
     width: 7em;
-    background-repeat: no-repeat;
 }
 
 .headerLogo {
+    padding-right: 10px;
     background-size: cover;
+    width: 40px;
+    height: 40px;
+    fill: white;
+    filter: invert(1);
 }
 
 .logo:hover {
@@ -86,41 +92,59 @@ li {
     }
 }
 
-@media only screen and (max-width: 992px) {
-    .logo {
-        margin-top: 5px;
-        width: 160px;
-        height: 50px;
+@media only screen and (max-width: 1020px) {
+    .headerContent {
+        width: 95%;
     }
 
     nav {
         width: 68%;
-        padding-top: 20px;
+    }
+
+    .logo {
+        width: 7.5em;
+        font-size: 0.9em;
+    }
+
+    .headerLogo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .navItem {
+        font-size: 1.4em;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    nav {
+        width: 68%;
     }
 }
 
 @media only screen and (max-width: 891px) {
     nav {
-        width: 63%;
+        width: 70%;
+        margin: 0;
     }
 
     .navItem {
-        font-size: 1.6em;
+        font-size: 1.2em;
     }
 }
 
 @media only screen and (max-width: 768px) {
     nav {
-        width: 60%;
-        margin: 0;
+        width: 70%;
+
     }
 
-    .header-wrapper {
-        width: 95%;
+    .logoContainer {
+        padding: 0;
     }
 
-    .navItem {
-        font-size: 12px;
+    .headerLogo {
+        margin-top: -5px;
     }
 
     .number {
@@ -129,14 +153,24 @@ li {
 
     .logo {
         margin-top: 5px;
-        width: 120px;
+        width: 200px;
         height: 50px;
+        font-size: 0.8em;
+    }
+
+    header {
+        padding: 10px 0;
     }
 }
 
-@media only screen and (max-width: 668px) {
+@media only screen and (max-width: 685px) {
     nav {
         width: 78%;
+        padding-top: 8px;
+    }
+
+    .headerContent {
+        width: 97%;
     }
 
     .headerWrapper {
@@ -144,9 +178,66 @@ li {
     }
 }
 
+@media only screen and (max-width: 625px) {
+    nav {
+        width: 85%;
+    }
+
+    .logo {
+        width: 180px;
+        display: flex;
+        align-items: center;
+        font-size: 0.7em;
+    }
+
+    .navItem {
+        font-size: 1.1em;
+    }
+
+    .headerContent {
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    .headerLogo {
+        width: 30px;
+        height: 30px;
+        padding-right: 5px;
+    }
+
+    .navItem {
+        font-size: 1em;
+    }
+
+    .logo {
+        width: 7.5em;
+    }
+}
+
+@media only screen and (max-width: 509px) {
+    .logo {
+        font-size: 0.6em;
+    }
+
+    .navItem {
+        font-size: 0.9em;
+    }
+
+    header {
+        padding: 0px;
+    }
+}
+
 @media only screen and (max-width: 480px) {
     header {
+        width: 100%;
         padding: 5px 0px;
+        border-radius: 0px;
+    }
+
+    .headerContent {
+        width: 90%;
     }
 
     nav {
@@ -180,7 +271,7 @@ li {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: #222222;
+        background-color: gold;
         transition: all 0.5s;
     }
 
