@@ -16,33 +16,38 @@ export const UpdateProduct = () => {
     const [title, setTitle] = useState("");
     const inputFileRef = useRef(null);
     const [imageUrl, setImageUrl] = useState("");
+    const oldInfo = [];
     useEffect(() => {
         dispatch(fetchTypes());
         dispatch(fetchProducts());
     }, [dispatch]);
     const data = products.items;
-    const typesData = types.items
+    const typesData = types.items;
     const productsData = products.items;
     const handleChangeType = (event) => {
         setTypeId(event.target.value);
     };
-    const handleChangeName = (event) => {
+    const handleChangeName = async (event) => {
         setName(event.target.value);
-        console.log(name)
     };
+
     const handleChangeFile = async (event) => {
         try {
-            setImageUrl(event.target.files[0]);
+            if (event.target.files.length === 1) {
+                setImageUrl([...imageUrl, event.target.files[0]]);
+            } else {
+                setImageUrl([...imageUrl, ...event.target.files]);
+            }
         } catch (e) {
-            console.log(e);
+            console.log(event);
         }
     };
 
-    const isValidFileUploaded = (file) => {
-        const validExtensions = ["png", "jpeg", "jpg"];
-        const fileExtension = file.type.split("/")[1];
-        return validExtensions.includes(fileExtension);
-    };
+    // const isValidFileUploaded = (file) => {
+    //     const validExtensions = ["png", "jpeg", "jpg"];
+    //     const fileExtension = file.type.split("/")[1];
+    //     return validExtensions.includes(fileExtension);
+    // };
 
     const addInfo = (e) => {
         e.preventDefault();
@@ -51,6 +56,7 @@ export const UpdateProduct = () => {
 
     const removeInfo = (e, number) => {
         e.preventDefault();
+
         setInfo(info.filter((i) => i.number !== number));
     };
 
@@ -59,6 +65,30 @@ export const UpdateProduct = () => {
             info.map((i) => (i.number === number ? { ...i, [key]: value } : i))
         );
     };
+
+    // useEffect(() => {
+    //     const firstChange = !name;
+    //     if (!firstChange) {
+    //         console.log(info)
+    //         // setInfo(info.filter((i) => i.number === number));
+    //         const res = data.filter((i) => i.title === name);
+    //         if (res[0].info.length > 0) {
+    //             for (let i = 0; i < res[0].info.length; i++) {
+    //                 oldInfo.push({
+    //                     title: res[0].info[i].title,
+    //                     description: res[0].info[i].description,
+    //                     number: res[0].info[i].number,
+    //                 });
+    //             }
+    //             addOldInfo(oldInfo);
+    //         }
+    //     } else {
+    //     }
+    // }, [name]);
+
+    // const addOldInfo = (oldInfo) => {
+    //     setInfo([...info, ...oldInfo]);
+    // };
 
     const addProduct = async (e) => {
         e.preventDefault();
@@ -81,51 +111,68 @@ export const UpdateProduct = () => {
             alert("Такое название уже есть");
             return;
         }
-        if (isValidFileUploaded(imageUrl)) {
-            const formData = new FormData();
+        // if (isValidFileUploaded(imageUrl)) {
+        const formData = new FormData();
 
-            formData.append("title", title);
-            formData.append("typeId", typeId);
-            formData.append("imageUrl", imageUrl);
-            formData.append("info", JSON.stringify(info));
-
-            try {
-                const { data } = await axios.put(`/product/update/${name}`, formData);
-                console.log(data);
-                alert("Товар изменен");
-                setTitle("");
-            } catch (response) {
-                console.log(response);
+        formData.append("title", title);
+        formData.append("typeId", typeId);
+        if (imageUrl.length > 1) {
+            for (let i = 0; i < imageUrl.length; i++) {
+                formData.append("imageUrl", imageUrl[i]);
             }
-        } else {
-            console.log("ddd");
         }
+        if (imageUrl.length === 1) {
+            formData.append("imageUrl", imageUrl[0]);
+        }
+        formData.append("info", JSON.stringify(info));
+
+        try {
+            const { data } = await axios.put(`/product/update/${name}`, formData);
+            alert("Товар изменен");
+            setTitle("");
+            setInfo([]);
+            setImageUrl([])
+            inputFileRef.current.value = ''
+        } catch (response) {
+            console.log(response);
+        }
+        // } else {
+        //     console.log("ddd");
+        // }
     };
-
-
 
     return (
         <div className={styles.container}>
             <div className={styles.containerTitle}>
-                <h2>Изменение товара</h2></div>
+                <h2>Изменение товара</h2>
+            </div>
             <div>
-                <Link to='/admin' className={styles.back}>Назад</Link>
+                <Link to="/admin" className={styles.back}>
+                    Назад
+                </Link>
             </div>
             <form action="" className={styles.form}>
                 <label htmlFor="name">Выберите название товара для изменения :</label>
-                <select id="names" name="names" select={name} onChange={handleChangeName}>
+                <select
+                    id="names"
+                    name="names"
+                    select={name}
+                    onChange={handleChangeName}
+                >
                     <>
                         {" "}
                         <option>Выберите название</option>
                     </>
                     {data.map((el) => (
-                        <option value={el.id} key={el.id}>
+                        <option value={el._id} key={el._id}>
                             {el.title}
                         </option>
                     ))}
                 </select>
 
-                <label htmlFor="title" className={styles.title}>Введите название товара</label>
+                <label htmlFor="title" className={styles.title}>
+                    Введите название товара
+                </label>
                 <input
                     type="text"
                     id="title"
@@ -134,7 +181,9 @@ export const UpdateProduct = () => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <label htmlFor="types" className={styles.types}>Выберите категорию товара:</label>
+                <label htmlFor="types" className={styles.types}>
+                    Выберите категорию товара:
+                </label>
                 <select
                     id="types"
                     name="types"
@@ -146,18 +195,22 @@ export const UpdateProduct = () => {
                         <option>Выберите категорию</option>
                     </>
                     {typesData.map((el) => (
-                        <option value={el.id} key={el.id}>
+                        <option value={el._id} key={el._id}>
                             {el.name}
                         </option>
                     ))}
                 </select>
 
-                <input ref={inputFileRef} onChange={handleChangeFile} type="file" />
-                <div >
-                    <button onClick={addInfo} className={styles.addButton}>Добавить новое свойство</button>
+                <input ref={inputFileRef} onChange={handleChangeFile} type="file" multiple />
+                <div>
+                    <button onClick={addInfo} className={styles.addButton}>
+                        Добавить новое свойство
+                    </button>
                     {info.map((i) => (
                         <div key={i.number} className={styles.infoContainer}>
-                            <label htmlFor="name" className={styles.name}>Введите название свойства</label>
+                            <label htmlFor="name" className={styles.name}>
+                                Введите название свойства
+                            </label>
                             <input
                                 value={i.title}
                                 type="text"
@@ -166,7 +219,9 @@ export const UpdateProduct = () => {
                                 onChange={(e) => changeInfo("title", e.target.value, i.number)}
                                 placeholder="Модель двигателя"
                             />
-                            <label htmlFor="name" className={styles.name}>Введите описание свойства</label>
+                            <label htmlFor="name" className={styles.name}>
+                                Введите описание свойства
+                            </label>
                             <input
                                 value={i.description}
                                 type="text"
@@ -185,7 +240,7 @@ export const UpdateProduct = () => {
                         </div>
                     ))}
                 </div>
-                <div>{/* <button>Добавить изображение</button> */}</div>
+
                 <button onClick={addProduct}>Изменить товар </button>
             </form>
         </div>

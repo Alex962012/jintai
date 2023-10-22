@@ -1,11 +1,20 @@
 .orderItem {
-    margin: 20px 0;
-    width: 350px;
+
+    width: 400px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     background-color: white;
     -webkit-box-shadow: 0px 4px 8px -1px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 0px 4px 8px -1px rgba(34, 60, 80, 0.2);
     box-shadow: 0px 4px 8px -1px rgba(34, 60, 80, 0.2);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.logoContainer {
+    width: 400px;
     padding: 20px;
 }
 
@@ -14,6 +23,8 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0 1px 1px 1px;
+    background-color: #f9b233;
+    width: 100%;
 }
 
 .itemTitleContainer:hover {
@@ -21,8 +32,9 @@
 }
 
 .itemPicture {
-    width: 350px;
-    height: 380px;
+    height: 20em;
+    width: 80%;
+    padding: 10px;
     object-fit: cover;
     margin-bottom: 10px;
     cursor: pointer;
@@ -34,186 +46,155 @@
 
 .itemName {
     color: var(--base-color);
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 600;
+    padding: 10px;
     width: 100%;
     font-family: "Cormorant Garamond", serif;
 }
 
-@media only screen and (max-width: 1374px) {
-    .orderItem {
-        width: 100%;
-        max-width: 24vw;
+.infoContainer {
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.titlesContainer {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+
+
+}
+
+.title {
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    width: 50%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    width: 50%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1448px) {
+    .logoContainer {
+        width: 350px;
     }
 
-    .itemPicture {
-        width: 100%;
-        max-width: 24vw;
-        height: 34vw;
+    .orderItem {
+        width: 350px;
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1232px) {
+    .logoContainer {
+        width: 450px;
+    }
+
+    .orderItem {
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 1032px) {
+    .logoContainer {
+        width: 500px;
+    }
+
+    .orderItem {
+        width: 500px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .itemPicture {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 665px) {
+    .logoContainer {
+        width: 450px;
+    }
+
+    .orderItem {
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 569px) {
+    .logoContainer {
+        width: 400px;
+    }
+
+    .orderItem {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 509px) {
+    .logoContainer {
+        width: 350px;
+    }
+
+    .orderItem {
+        width: 350px;
+    }
+
+    .itemPicture {
+        height: 18em;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .logoContainer {
+        width: 300px;
+    }
+
     .orderItem {
         width: 300px;
     }
 
     .itemPicture {
-        width: 300px;
-        height: 360px;
+        height: 14em;
+    }
+
+    .title {
+        font-size: 10px;
+    }
+
+    .description {
+        font-size: 10px;
     }
 }
 
-@media only screen and (max-width: 992px) {
-    .orderItem {
-        width: 265px;
-        max-width: 265px;
-    }
-
-    .itemPicture {
-        width: 265px;
-        max-width: 265px;
-        height: 320px;
-    }
-}
-
-@media only screen and (max-width: 815px) {
-    .orderItem {
-        width: 230px;
-    }
-
-    .itemPicture {
-        width: 230px;
-        height: 280px;
-    }
-
-    .itemName {
-        font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .orderItem {
-        width: 200px;
-    }
-
-    .itemPicture {
-        width: 200px;
-        height: 260px;
-    }
-
-    .itemName {
-        font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 662px) {
-    .orderItem {
-        width: 180px;
-    }
-
-    .itemPicture {
-        width: 180px;
-        height: 240px;
-    }
-
-    .itemName {
-        font-size: 18px;
-    }
-
-}
-
-@media only screen and (max-width: 600px) {
-    .orderItem {
-        width: 160px;
-    }
-
-    .itemPicture {
-        width: 160px;
-        height: 240px;
-    }
-}
-
-@media only screen and (max-width: 527px) {
-    .orderItem {
-        max-width: 145px;
-    }
-
-    .itemPicture {
-        max-width: 145px;
-        height: 220px;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .orderItem {
-        width: 220px;
-        max-width: 220px;
-    }
-
-    .itemPicture {
-        max-width: 220px;
-        width: 220px;
-        height: 280px;
-    }
-
-    .orderItem:nth-child(3) {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 479px) {
-    .orderItem {
-        max-width: 200px;
-        width: 100%;
-    }
-
-    .itemPicture {
-        max-width: 200px;
-        height: 280px;
-    }
-}
-
-@media only screen and (max-width: 443px) {
-    .orderItem {
-        max-width: 200px;
-    }
-}
-
-@media only screen and (max-width: 423px) {
-    .orderItem {
-        max-width: 180px;
-    }
-
-    .itemPicture {
-        max-width: 180px;
-        height: 250px;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .itemPicture {
-        max-width: 180px;
-        height: 240px;
-    }
-}
-
-@media only screen and (max-width: 380px) {
-    .orderItem:nth-child(3) {
-        display: block;
+@media only screen and (max-width: 375px) {
+    .logoContainer {
+        width: 280px;
     }
 
     .orderItem {
-        width: 95px;
+        width: 280px;
     }
-
-    .itemPicture {
-        width: 95px;
-        height: 140px;
-    }
-
-    .itemName {
-        font-size: 12px;
-    }
-
 }

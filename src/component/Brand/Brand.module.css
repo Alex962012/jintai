@@ -6,7 +6,8 @@
 
 .brandTitle {
     display: flex;
-    justify-content: center;
+    justify-content: first baseline;
+    margin-left: -40px;
     color: rgb(57, 56, 56);
 }
 
@@ -16,10 +17,30 @@
     color: rgb(57, 56, 56);
 }
 
+.mainTitle {
+    width: 80%;
+    height: 60px;
+    background-color: #292F35;
+    color: gold;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+}
+
 .text {
     text-align: justify;
-    text-indent: 15%;
+    text-indent: 5%;
+    font-size: 22px;
 }
+
+li {
+    color: rgb(240, 212, 51);
+}
+
+
 
 .img {
     width: 100%;
@@ -35,4 +56,155 @@
     -webkit-box-shadow: 4px 4px 8px 11px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 11px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 11px rgba(34, 60, 80, 0.2);
+}
+
+.number {
+    margin-top: 50px;
+    width: 350px;
+    height: 80px;
+    background-color: #292F35;
+    color: gold;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+
+
+}
+
+.numberContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    margin-left: 40px;
+}
+
+@media only screen and (max-width: 1374px) {
+    .brandContent {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 986px) {
+    .text {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 966px) {
+    .img {
+        height: 25em;
+    }
+
+    .mainTitle {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 816px) {
+    .number {
+        font-size: 1em;
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .img {
+        height: 20em;
+    }
+
+    .number {
+        margin-top: 25px;
+    }
+}
+
+@media only screen and (max-width: 715px) {
+    .number {
+        margin-top: 10px;
+    }
+
+    .mainTitle {
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 663px) {
+    .img {
+        height: 16em;
+    }
+
+    .brandSubtitle {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 526px) {
+    .brandContent {
+        padding: 15px;
+    }
+
+    .brandTitle {
+        margin-left: -15px;
+    }
+
+    .numberContainer {
+        margin-left: 15px;
+    }
+
+    .brandContainer {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .brandContainer {
+        padding: 20px 0;
+    }
+
+    .img {
+        height: 14em;
+    }
+}
+
+@media only screen and (max-width: 436px) {
+    .mainTitle {
+        font-size: 0.6em;
+        height: 50px;
+    }
+
+    .number {
+        font-size: 0.9em;
+    }
+
+    .img {
+        height: 12em;
+    }
+}
+
+@media only screen and (max-width: 416px) {
+    .number {
+        width: 80%;
+        ;
+    }
+}
+
+@media only screen and (max-width: 398px) {
+    .mainTitle {
+        font-size: 0.5em;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .img {
+        height: 10.5em;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
 }

@@ -18,7 +18,7 @@ import { UpdateType } from "./pages/UpdateType/UpdateType";
 import { DeleteProduct } from "./pages/DeleteProduct/DeleteProduct";
 import { DeleteType } from "./pages/DeleteType/DeleteType";
 import { Company } from "./pages/Company/Company";
-
+import { RequireAuth } from "./component/ReqireAuth/RequireAuth";
 function App() {
   return (
     <div className={styles.app}>
@@ -29,18 +29,67 @@ function App() {
         </header>
         <div className={styles.title}>
           <Routes>
-            <Route path="/admin" element={<Admin />} />
+            <Route
+              path="/admin"
+              element={
+                <RequireAuth>
+                  <Admin />
+                </RequireAuth>
+              }
+            />
             <Route path="/auth" element={<Auth />} />
             <Route path="/catalog/:id" element={<Catalog />} />
             <Route path="/type-catalog" element={<TypesCatalog />} />
             <Route path="/about" element={<AboutBrand />} />
             <Route path="/specifications/:id" element={<ItemDetail />} />
-            <Route path="/createProduct" element={<CreateProduct />} />
-            <Route path="/createType" element={<CreateType />} />
-            <Route path="/updateProduct" element={<UpdateProduct />} />
-            <Route path="/updateType" element={<UpdateType />} />
-            <Route path="/deleteProduct" element={<DeleteProduct />} />
-            <Route path="/deleteType" element={<DeleteType />} />
+            <Route
+              path="/createProduct"
+              element={
+                <RequireAuth>
+                  <CreateProduct />{" "}
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/createType"
+              element={
+                <RequireAuth>
+                  <CreateType />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/updateProduct"
+              element={
+                <RequireAuth>
+                  <UpdateProduct />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/updateType"
+              element={
+                <RequireAuth>
+                  <UpdateType />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/deleteProduct"
+              element={
+                <RequireAuth>
+                  <DeleteProduct />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/deleteType"
+              element={
+                <RequireAuth>
+                  <DeleteType />
+                </RequireAuth>
+              }
+            />
             <Route path="/company" element={<Company />} />
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />

@@ -53,10 +53,7 @@ input {
     padding: 20px;
 }
 
-button {
-    padding: 20px;
-    margin: 10px;
-}
+
 
 .deleteButton {
     display: flex;

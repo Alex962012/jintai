@@ -11,7 +11,7 @@ export const DeleteProduct = () => {
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch, product]);
-    console.log(product);
+
     const data = products.items;
     const deleteProduct = async (e) => {
         e.preventDefault();

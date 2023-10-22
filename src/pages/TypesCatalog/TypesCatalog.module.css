@@ -1,10 +1,11 @@
 .typeCatalog {
     margin: 0 auto;
-    width: 80%;
-    min-height: 800px;
+    width: 100%;
+
     margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }

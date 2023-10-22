@@ -9,7 +9,7 @@ export const DeleteType = () => {
     const { types } = useSelector((state) => state.types);
     const dispatch = useDispatch();
     const [type, setType] = useState(null);
-    console.log(types)
+
     useEffect(() => {
         dispatch(fetchTypes());
     }, [dispatch, type]);

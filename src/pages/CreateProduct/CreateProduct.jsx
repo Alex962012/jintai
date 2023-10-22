@@ -34,9 +34,13 @@ export const CreateProduct = () => {
 
     const handleChangeFile = async (event) => {
         try {
-            setImageUrl([...imageUrl, ...event.target.files]);
+            if (event.target.files.length === 1) {
+                setImageUrl([...imageUrl, event.target.files[0]]);
+            } else {
+                setImageUrl([...imageUrl, ...event.target.files]);
+            }
         } catch (e) {
-            console.log(e);
+            console.log(event);
         }
     };
     // const isValidFileUploaded = (file) => {
@@ -60,7 +64,7 @@ export const CreateProduct = () => {
             info.map((i) => (i.number === number ? { ...i, [key]: value } : i))
         );
     };
-    console.log(imageUrl.length);
+
     const addProduct = async (e) => {
         e.preventDefault();
 
@@ -89,27 +93,24 @@ export const CreateProduct = () => {
         if (imageUrl.length > 1) {
             for (let i = 0; i < imageUrl.length; i++) {
                 formData.append("imageUrl", imageUrl[i]);
-                console.log(imageUrl);
             }
-
         }
         if (imageUrl.length === 1) {
-            formData.append("imageUrl", imageUrl);
+            formData.append("imageUrl", imageUrl[0]);
         }
-
+        console.log(imageUrl);
         formData.append("info", JSON.stringify(info));
         try {
             const { data } = await axios.post("/product/add", formData);
             console.log(data);
-
             alert("Товар создан");
             setTitle("");
+            setInfo([]);
+            setImageUrl([]);
+            inputFileRef.current.value = "";
         } catch (response) {
             console.log(response);
         }
-        // } else {
-        //     console.log("ddd");
-        // }
     };
 
     return (
@@ -142,6 +143,7 @@ export const CreateProduct = () => {
                     name="types"
                     select={typeId}
                     onChange={handleChangeType}
+                    className={styles.typesSelect}
                 >
                     <>
                         {" "}
@@ -166,39 +168,47 @@ export const CreateProduct = () => {
                     </button>
                     {info.map((i) => (
                         <div key={i.number} className={styles.infoContainer}>
-                            <label htmlFor="name" className={styles.name}>
-                                Введите название свойства
-                            </label>
-                            <input
-                                value={i.title}
-                                type="text"
-                                id="name"
-                                name="name"
-                                onChange={(e) => changeInfo("title", e.target.value, i.number)}
-                                placeholder="Модель двигателя"
-                            />
-                            <label htmlFor="name" className={styles.name}>
-                                Введите описание свойства
-                            </label>
-                            <input
-                                value={i.description}
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Cummins"
-                                onChange={(e) =>
-                                    changeInfo("description", e.target.value, i.number)
-                                }
-                            />
+                            <div className={styles.informationContainer}>
+                                <div className={styles.nameContainer}>
+                                    <label htmlFor="name" className={styles.name}>
+                                        Введите название свойства
+                                    </label>
+                                    <input
+                                        value={i.title}
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        onChange={(e) =>
+                                            changeInfo("title", e.target.value, i.number)
+                                        }
+                                        placeholder="Модель двигателя"
+                                    />
+                                </div>
+                                <div className={styles.nameContainer}>
+                                    <label htmlFor="name" className={styles.name}>
+                                        Введите описание свойства
+                                    </label>
+                                    <input
+                                        value={i.description}
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Cummins"
+                                        onChange={(e) =>
+                                            changeInfo("description", e.target.value, i.number)
+                                        }
+                                    />
+                                </div>
+                            </div>
                             <div className={styles.deleteButton}>
-                                <button onClick={(e) => removeInfo(e, i.number)}>
+                                <button onClick={(e) => removeInfo(e, i.number)} className={styles.deleteContainer}>
                                     Удалить
                                 </button>
                             </div>
                         </div>
                     ))}
                 </div>
-                <button onClick={addProduct}>Создать </button>
+                <button onClick={addProduct} className={styles.create}>Создать </button>
             </form>
         </div>
     );

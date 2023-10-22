@@ -56,6 +56,7 @@ export const CreateType = () => {
                 axios.post("/type/add", formData);
                 alert("Тип создан");
                 setValue("");
+                inputFileRef.current.value = ""
             } catch (response) {
                 console.log(response);
             }

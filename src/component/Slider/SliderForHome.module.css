@@ -22,8 +22,8 @@
     position: relative;
     z-index: 10;
     background-image: url('../../../public/assets/53.jpg');
-    background-size: cover;
-    background-position: 50%;
+    background-size: contain;
+    background-position: left;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -33,9 +33,24 @@
     position: relative;
     z-index: 10;
     background-image: url('../../../public/assets/12323.jpg');
-    background-size: cover;
+    background-size: contain;
+    background-position: left;
     background-repeat: no-repeat;
-    background-position: 50%;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.sliderPic3 {
+
+    position: relative;
+    z-index: 10;
+    background-image: url('../../../public/assets/lg8631.jpg');
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+
     display: flex;
     justify-content: end;
     align-items: center;
@@ -56,6 +71,8 @@
     flex-direction: column;
     align-items: end;
     justify-content: end;
+    width: 100%;
+    max-width: 100%;
 }
 
 
@@ -71,6 +88,11 @@
 
 .subtitle {
     font-size: 2.2em;
+    text-align: right;
+
+}
+
+.littleTitle {
     text-align: right;
 }
 
@@ -165,11 +187,15 @@
 
 @media only screen and (max-width: 755px) {
     .subtitle {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     .title {
         width: 70%;
+    }
+
+    .sliderContent {
+        height: 500px;
     }
 }
 
@@ -196,15 +222,19 @@
 
 @media only screen and (max-width: 635px) {
     .sliderContent {
-        height: 500px;
+        height: 450px;
     }
 
     .subtitle {
-        font-size: 1.2em;
+        font-size: 1.0em;
     }
 
     .littleTitle {
-        font-size: 0.8em;
+        font-size: 0.7em;
+    }
+
+    .buttonContainer {
+        margin-top: 2em;
     }
 }
 
@@ -214,19 +244,38 @@
     }
 }
 
-@media only screen and (max-width: 585px) {
+@media only screen and (max-width: 600px) {
     .title {
         width: 70%;
+    }
+
+    .sliderContainer {
+        height: 420px;
     }
 
     .subtitle {
         font-size: 1.1em;
     }
+
+    .sliderPic3 {
+        background-size: contain;
+
+    }
+
+    .sliderPic2 {
+        background-size: cover;
+    }
+
+    .sliderPic1 {
+        background-size: cover;
+    }
+
+
 }
 
 @media only screen and (max-width: 565px) {
     .sliderContent {
-        height: 450px;
+        height: 430px;
     }
 
     .title {
@@ -234,8 +283,10 @@
     }
 
     .buttonContainer {
-        margin-top: 2em;
+        margin-top: 0.8em;
     }
+
+
 
     .button {
         font-size: 0.7em;
@@ -264,6 +315,7 @@
 
     .title {
         width: 80%;
+        max-width: 80%
     }
 
     .button {
@@ -281,19 +333,33 @@
         margin-top: 0px;
     }
 
+    .sliderContainer {
+        height: 330px;
+    }
+
 
 }
 
-@media only screen and (max-width: 435px) {
+@media only screen and (max-width: 450px) {
 
     .title {
-        width: 70%;
+        width: 80%;
+        max-width: 100%;
+    }
+
+    .littleTitle {
+        font-size: 0.5em;
+
     }
 }
 
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 425px) {
     .button {
         font-size: 0.45em;
+    }
+
+    .buttonContainer {
+        margin-top: 2em;
     }
 
     .title {
@@ -302,17 +368,26 @@
 
     .littleTitle {
         font-size: 0.6em;
+
+    }
+
+    .sliderContent {
+        height: 280px;
     }
 }
 
 @media only screen and (max-width: 391px) {
 
     .sliderContent {
-        height: 280px;
+        height: 260px;
     }
 
     .subtitle {
         font-size: 0.8em;
+    }
+
+    .sliderContainer {
+        height: 300px;
     }
 }
 
@@ -324,6 +399,8 @@
     .title {
         width: 85%;
     }
+
+
 }
 
 @media only screen and (max-width: 336px) {

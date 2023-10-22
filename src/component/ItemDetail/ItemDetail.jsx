@@ -1,12 +1,18 @@
 import styles from "./ItemDetail.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchProduct } from "../../redux/slices/products";
 import { Gallery } from "../Gallery/Gallery";
+import { Feedback } from "../Feedback/Feedback";
+import { Whatsapp } from "../whatsaap/Whatsapp";
 export const ItemDetail = () => {
     const params = useParams();
+    const [active, setActive] = useState(false);
 
+    const onClickModal = () => {
+        setActive(true);
+    };
     const { product } = useSelector((state) => state.product);
     const dispatch = useDispatch();
 
@@ -23,6 +29,11 @@ export const ItemDetail = () => {
             <div className={styles.row}>
                 <div className={styles.photogallery}>
                     {isProductLoading ? "" : <Gallery item={data.imageUrl} />}
+                    <div>
+                        <div className={styles.price} onClick={() => onClickModal()}>
+                            УЗНАТЬ ЦЕНУ
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.specificationsBlock}>
                     <div className={styles.specificationsTitle}>
@@ -33,7 +44,7 @@ export const ItemDetail = () => {
                             {data.info ? (
                                 data.info.map((el) => (
                                     <div key={el._id} className={styles.itemInfo}>
-                                        <div className={styles.itemInfoTitle}>{el.title}:</div>
+                                        <div className={styles.itemInfoTitle}>{el.title}</div>
                                         <div className={styles.itemInfoDescription}>
                                             {el.description}
                                         </div>
@@ -45,7 +56,11 @@ export const ItemDetail = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
+            <Feedback active={active}
+                setActive={setActive} />
+            <Whatsapp></Whatsapp>
         </div>
     );
 };

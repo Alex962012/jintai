@@ -1,13 +1,23 @@
 import styles from "./Company.module.css";
+import { useState } from "react";
+import { Feedback } from "../../component/Feedback/Feedback";
+import { Whatsapp } from "../../component/whatsaap/Whatsapp";
 export const Company = () => {
+    const [active, setActive] = useState(false);
+    const onClickModal = () => {
+        setActive(true);
+    };
     return (
         <div className={styles.companyContainer}>
             <div>
                 <div className={styles.title}>
-                    <h2>Контакты компании</h2>
+                    <div className={styles.titleContainer}><h2>Контакты компании</h2></div>
                 </div>
                 <div className={styles.content}>
                     <div className={styles.contactInfo}>
+                        <div className={styles.price} onClick={() => onClickModal()}>
+                            ЗАКАЗАТЬ ЗВОНОК
+                        </div>
                         <div className={styles.info}>
                             <div className={styles.icon}>
                                 <img src="../../assets/icon-phone.png" alt="" className={styles.img} />
@@ -57,6 +67,9 @@ export const Company = () => {
                     </div>
                 </div>
             </div>
+            <Feedback active={active}
+                setActive={setActive} />
+            <Whatsapp></Whatsapp>
         </div>
     );
 };

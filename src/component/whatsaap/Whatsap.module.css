@@ -1,0 +1,24 @@
+.container {
+    width: 50px;
+    height: 50px;
+    /* background-color: green; */
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 4%;
+    bottom: 4%;
+    z-index: 99;
+    background-image: url(../../../public/assets/whatsapp.png);
+    background-size: contain;
+    -webkit-box-shadow: 0px 4px 8px -1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 8px -1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 8px -1px rgba(34, 60, 80, 0.2);
+}
+
+.container:hover {
+    cursor: pointer;
+
+    transform: scale(1.1);
+}

@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { Item } from "../../component/Item/Item";
 import styles from "./Catalog.module.css";
-import { Link } from "react-router-dom";
+
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsId } from "../../redux/slices/products";
+import { Whatsapp } from "../../component/whatsaap/Whatsapp";
 export const Catalog = () => {
     const params = useParams();
     const { productsId } = useSelector((state) => state.productsId);
@@ -13,19 +14,17 @@ export const Catalog = () => {
     useEffect(() => {
         dispatch(fetchProductsId(params.id));
     }, [dispatch, params.id]);
-
-    console.log(productsId)
     return (
         <div className={styles.orderSection}>
             <div className={styles.orderSectionTitle}>
                 <h4>Каталог</h4>
             </div>
-            <Link to="/auth">Добавить товар</Link>
             <div className={styles.contentOrder}>
                 {data.map((item) => (
                     <Item {...item} key={item._id} />
                 ))}
             </div>
+            <Whatsapp></Whatsapp>
         </div>
     );
 };
