@@ -23,7 +23,7 @@ header {
 
     align-items: center;
     justify-content: center;
-    width: 7em;
+    width: 8em;
 }
 
 .headerLogo {
@@ -50,9 +50,9 @@ header {
     align-items: center;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     color: gold;
-    font-size: 30px;
+    font-size: 28px;
     padding: 0 20px;
-    font-weight: 800;
+    font-weight: 500;
 }
 
 nav {
@@ -67,7 +67,7 @@ nav {
     color: var(--price-color);
     font-size: 1.6em;
     font-weight: 800;
-    font-family: "Cormorant Garamond", serif;
+    /* font-family: "Cormorant Garamond", serif; */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
