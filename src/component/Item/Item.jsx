@@ -10,7 +10,7 @@ export const Item = (props) => {
             </div>
             <div className={styles.orderItem}>
                 <img
-                    src={process.env.REACT_APP_API_URL + props.imageUrl[0]}
+                    src={process.env.REACT_APP_API_URL + '/api' + props.imageUrl[0]}
                     alt={props.title}
                     className={styles.itemPicture}
                 ></img>
