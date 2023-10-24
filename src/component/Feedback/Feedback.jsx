@@ -1,10 +1,12 @@
 import { useState } from "react";
 import styles from './Feedback.module.css'
 import emailjs from "@emailjs/browser";
+import { Link } from "react-router-dom";
 export const Feedback = ({ active,
     setActive }) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [check, setCheck] = useState(false)
     const sendEmail = (e) => {
         e.preventDefault();
         if (name === '') {
@@ -13,6 +15,10 @@ export const Feedback = ({ active,
         }
         if (email === '') {
             alert("Заполните номер")
+            return
+        }
+        if (check === false) {
+            alert("Необходимо согласиться с политикой конфиденциальности")
             return
         }
         else {
@@ -33,10 +39,10 @@ export const Feedback = ({ active,
                 );
             setName("");
             setEmail("");
+
         }
 
     };
-
     return (
         <div className={active ? styles.modalActive : styles.modal}
             onClick={() => setActive(false)}>
@@ -83,6 +89,12 @@ export const Feedback = ({ active,
                             onChange={(e) => setEmail(e.target.value)}
                             name="user_email"
                         />
+
+                        <div className={styles.check}>
+                            <input type="checkbox" value={check}
+                                onChange={() => setCheck(check ? false : true)} />
+                            <label >я соглашаюсь с <Link to="/politic">политикой конфиденциальности</Link></label>
+                        </div>
 
                         <button className={styles.formButton} type="submit">
                             Отправить сообщение

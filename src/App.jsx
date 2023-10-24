@@ -19,6 +19,7 @@ import { DeleteProduct } from "./pages/DeleteProduct/DeleteProduct";
 import { DeleteType } from "./pages/DeleteType/DeleteType";
 import { Company } from "./pages/Company/Company";
 import { RequireAuth } from "./component/ReqireAuth/RequireAuth";
+import { Politic } from "./pages/Politic/Politic";
 function App() {
   return (
     <div className={styles.app}>
@@ -92,6 +93,7 @@ function App() {
             />
             <Route path="/company" element={<Company />} />
             <Route path="/" element={<Home />} />
+            <Route path="/politic" element={<Politic />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
