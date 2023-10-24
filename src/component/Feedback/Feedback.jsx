@@ -59,9 +59,9 @@ export const Feedback = ({ active,
                 </div>
                 <div className={styles.formContainer}>
                     <div className={styles.formTitleContainer}>
-                        <h3 className={styles.formTitle}>
+                        <h2 className={styles.formTitle}>
                             Закажите обратный звонок
-                        </h3>
+                        </h2>
                         <div className={styles.subtitle}>
                             Заполните форму и наш специалист перезвонит вам.
                         </div>

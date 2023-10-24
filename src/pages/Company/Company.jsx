@@ -11,7 +11,7 @@ export const Company = () => {
         <div className={styles.companyContainer}>
             <div>
                 <div className={styles.title}>
-                    <div className={styles.titleContainer}><h2>Контакты компании</h2></div>
+                    <div className={styles.titleContainer}><h1>Контакты компании</h1></div>
                 </div>
                 <div className={styles.content}>
                     <div className={styles.contactInfo}>
