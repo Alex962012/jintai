@@ -9,7 +9,7 @@ export const Item = (props) => {
             </div>
             <div className={styles.orderItem}>
                 <img
-                    src={'https://jintai-tech.ru/images' + props.imageUrl[0]}
+                    src={'https://jintai-tech.ru/images/' + props.imageUrl[0]}
                     alt={props.title}
                     className={styles.itemPicture}
                 ></img>

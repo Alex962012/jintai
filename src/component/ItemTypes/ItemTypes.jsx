@@ -5,7 +5,7 @@ export const ItemTypes = (props) => {
         <Link className={styles.item} to={`/catalog/${[props._id]}`}>
             <div >
                 <img
-                    src={'https://jintai-tech.ru/images' + props.imageUrl}
+                    src={'https://jintai-tech.ru/images/' + props.imageUrl}
                     alt={props.title}
                     className={styles.itemPicture}
                 ></img>
