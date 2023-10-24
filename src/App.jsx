@@ -19,6 +19,7 @@ import { DeleteProduct } from "./pages/DeleteProduct/DeleteProduct";
 import { DeleteType } from "./pages/DeleteType/DeleteType";
 import { Company } from "./pages/Company/Company";
 import { RequireAuth } from "./component/ReqireAuth/RequireAuth";
+console.log('hello')
 function App() {
   return (
     <div className={styles.app}>
