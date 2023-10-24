@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import styles from "./Item.module.css";
 
 export const Item = (props) => {
-    console.log(process.env.REACT_APP_API_URL)
     return (
         <Link to={`/specifications/${props._id}`} className={styles.logoContainer}>
             <div className={styles.itemTitleContainer}>
