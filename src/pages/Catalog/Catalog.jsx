@@ -17,7 +17,7 @@ export const Catalog = () => {
     return (
         <div className={styles.orderSection}>
             <div className={styles.orderSectionTitle}>
-                <h4>Каталог</h4>
+                <h1>Каталог</h1>
             </div>
             <div className={styles.contentOrder}>
                 {data.map((item) => (

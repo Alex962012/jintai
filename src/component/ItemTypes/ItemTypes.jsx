@@ -6,7 +6,7 @@ export const ItemTypes = (props) => {
             <div >
                 <img
                     src={'https://jintai-tech.ru/images/' + props.imageUrl}
-                    alt={props.title}
+                    alt='img'
                     className={styles.itemPicture}
                 ></img>
                 <div className={styles.itemTitleContainer}>
