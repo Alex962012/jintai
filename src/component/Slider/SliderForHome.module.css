@@ -157,7 +157,7 @@
     }
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 930px) {
     .sliderContent {
         height: 580px;
     }
@@ -176,7 +176,7 @@
     }
 }
 
-@media only screen and (max-width: 825px) {
+@media only screen and (max-width: 849px) {
     .sliderContent {
         height: 550px;
     }
@@ -192,11 +192,15 @@
     }
 
     .title {
-        width: 70%;
+        width: 90%;
     }
 
     .sliderContent {
         height: 500px;
+    }
+
+    .buttonContainer {
+        margin-top: 2em;
     }
 }
 
@@ -206,13 +210,13 @@
     }
 
     .title {
-        width: 84%;
+        width: 90%;
     }
 }
 
 @media only screen and (max-width: 685px) {
     .subtitle {
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
 
     .button {
@@ -221,7 +225,7 @@
 
 }
 
-@media only screen and (max-width: 635px) {
+@media only screen and (max-width: 660px) {
     .sliderContent {
         height: 450px;
     }
@@ -241,13 +245,13 @@
 
 @media only screen and (max-width: 615px) {
     .title {
-        width: 75%;
+        width: 90%;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .title {
-        width: 70%;
+        width: 90%;
     }
 
     .sliderContainer {
@@ -280,7 +284,7 @@
     }
 
     .title {
-        width: 85%;
+        width: 90%;
     }
 
     .buttonContainer {
@@ -300,7 +304,7 @@
     }
 
     .title {
-        width: 75%;
+        width: 90%;
     }
 
     .littleTitle {
@@ -315,8 +319,8 @@
     }
 
     .title {
-        width: 80%;
-        max-width: 80%
+        width: 90%;
+        max-width: 90%
     }
 
     .button {
@@ -341,11 +345,15 @@
 
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 469px) {
 
     .title {
-        width: 80%;
+        width: 90%;
         max-width: 100%;
+    }
+
+    .buttonContainer {
+        margin-top: 2em;
     }
 
     .littleTitle {
@@ -377,7 +385,7 @@
     }
 }
 
-@media only screen and (max-width: 391px) {
+@media only screen and (max-width: 410px) {
 
     .sliderContent {
         height: 260px;
@@ -392,13 +400,17 @@
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 379px) {
     .subtitle {
         font-size: 0.7em;
     }
 
+    .littleTitle {
+        font-size: 0.5em;
+    }
+
     .title {
-        width: 85%;
+        width: 95%;
     }
 
 
@@ -414,7 +426,5 @@
         height: 220px;
     }
 
-    .title {
-        width: 75%
-    }
+
 }
