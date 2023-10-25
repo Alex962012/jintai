@@ -43,10 +43,9 @@
 }
 
 .sliderPic3 {
-
     position: relative;
     z-index: 10;
-    background-image: url('../../../public/assets/lg8631.jpg');
+    background-image: url('../../../public/assets/2_scaled.jpg');
     background-size: contain;
     background-position: left;
     background-repeat: no-repeat;
@@ -62,6 +61,7 @@
     clip-path: polygon(1% 0, 100% 0%, 100% 100%, 19% 100%);
     display: flex;
     height: 100%;
+    width: 45%;
     color: white;
     font-size: 30px;
 }
@@ -79,7 +79,7 @@
 .title {
     display: flex;
     margin: 0 auto;
-    width: 70%;
+    width: 90%;
     flex-direction: column;
     justify-content: end;
     align-items: end;
@@ -109,7 +109,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15em;
+    width: 17em;
     height: 2em;
     font-size: 1.2em;
     letter-spacing: 1px;
@@ -132,42 +132,72 @@
 }
 
 @media only screen and (max-width: 1320px) {
-    .sliderContentTitle {
-        width: 60%;
-    }
-}
-
-@media only screen and (max-width: 1140px) {
-    .title {
-        width: 85%;
-    }
-}
-
-@media only screen and (max-width: 1050px) {
-    .sliderContent {
-        height: 650px;
-    }
-
-    .buttonContainer {
-        margin-top: 3em;
-    }
-
     .subtitle {
         font-size: 2em;
     }
 }
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 1300px) {
+    .sliderContentTitle {
+        width: 40%;
+    }
+
+    .subtitle {
+        font-size: 1.8em;
+    }
+}
+
+@media only screen and (max-width: 1251px) {
+    .sliderContent {
+        height: 700px;
+    }
+}
+
+@media only screen and (max-width: 1205px) {
+    .subtitle {
+        font-size: 1.6em;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .title {
+        width: 90%;
+    }
+
+    .sliderContent {
+        height: 680px;
+    }
+}
+
+@media only screen and (max-width: 1085px) {
+    .sliderContent {
+        height: 650px;
+    }
+
+    .buttonContainer {
+        margin-top: 4.4em;
+    }
+
+    .subtitle {
+        font-size: 1.4em;
+    }
+}
+
+@media only screen and (max-width: 1030px) {
     .sliderContent {
         height: 580px;
     }
 
     .buttonContainer {
-        margin-top: 3em;
+        margin-top: 4em;
     }
 
     .subtitle {
-        font-size: 1.8em;
+        font-size: 1.35em;
+    }
+
+    .littleTitle {
+        font-size: 0.8em;
     }
 
     .button {
@@ -176,19 +206,19 @@
     }
 }
 
-@media only screen and (max-width: 849px) {
+@media only screen and (max-width: 965px) {
     .sliderContent {
         height: 550px;
     }
 
     .subtitle {
-        font-size: 1.6em;
+        font-size: 1.2em;
     }
 }
 
-@media only screen and (max-width: 755px) {
+@media only screen and (max-width: 855px) {
     .subtitle {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     .title {
@@ -200,42 +230,72 @@
     }
 
     .buttonContainer {
-        margin-top: 2em;
+        margin-top: 2.4em;
+    }
+
+    .button {
+        font-size: 0.8em;
     }
 }
 
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 805px) {
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .littleTitle {
+        font-size: 0.75em;
+    }
+
+    .buttonContainer {
+        margin-top: 2.9em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
     .button {
+        font-size: 0.6em;
+    }
+
+    .subtitle {
         font-size: 0.9em;
+    }
+
+    .littleTitle {
+        font-size: 0.6em;
     }
 
     .title {
         width: 90%;
     }
+
+    .sliderContent {
+        height: 450px;
+    }
 }
 
 @media only screen and (max-width: 685px) {
-    .subtitle {
-        font-size: 1.1em;
+    .buttonContainer {
+        margin-top: 2em;
     }
 
-    .button {
-        font-size: 0.8em;
+    .sliderContent {
+        height: 420px;
     }
 
 }
 
 @media only screen and (max-width: 660px) {
     .sliderContent {
-        height: 450px;
+        height: 410px;
     }
 
     .subtitle {
-        font-size: 1.0em;
+        font-size: 0.8em;
     }
 
     .littleTitle {
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
 
     .buttonContainer {
@@ -254,33 +314,51 @@
         width: 90%;
     }
 
-    .sliderContainer {
+    .sliderContent {
         height: 420px;
     }
 
-    .subtitle {
-        font-size: 1.1em;
+    .littleTitle {
+        font-size: 0.55em;
     }
-
-    .sliderPic3 {
-        background-size: contain;
-
-    }
-
-    .sliderPic2 {
-        background-size: cover;
-    }
-
-    .sliderPic1 {
-        background-size: cover;
-    }
-
-
 }
 
-@media only screen and (max-width: 565px) {
+@media only screen and (max-width: 575px) {
+
+    .title {
+        width: 90%;
+    }
+
+    .buttonContainer {
+        margin-top: 2em;
+    }
+
     .sliderContent {
-        height: 430px;
+        height: 400px;
+    }
+
+
+    .subtitle {
+        font-size: 0.7em;
+    }
+
+
+    .button {
+        font-size: 0.6em;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .sliderContainer {
+        margin-top: 0px;
+    }
+
+    .subtitle {
+        font-size: 0.75em;
+    }
+
+    .sliderContent {
+        height: 320px;
     }
 
     .title {
@@ -288,44 +366,25 @@
     }
 
     .buttonContainer {
-        margin-top: 0.8em;
+        margin-top: 3.5em;
     }
-
-
 
     .button {
-        font-size: 0.7em;
-    }
-}
-
-@media only screen and (max-width: 538px) {
-    .subtitle {
-        font-size: 0.95em;
-    }
-
-    .title {
-        width: 90%;
+        font-size: 0.55em;
     }
 
     .littleTitle {
-        padding-top: 25px;
-        font-size: 0.7em;
+        font-size: 0.5em;
     }
 }
 
 @media only screen and (max-width: 509px) {
+
     .subtitle {
-        font-size: 0.9em;
+        font-size: 0.65em;
     }
 
-    .title {
-        width: 90%;
-        max-width: 90%
-    }
 
-    .button {
-        font-size: 0.6em;
-    }
 }
 
 @media only screen and (max-width: 481px) {
@@ -335,14 +394,8 @@
     }
 
     .sliderContainer {
-        margin-top: 0px;
-    }
-
-    .sliderContainer {
         height: 330px;
     }
-
-
 }
 
 @media only screen and (max-width: 469px) {
@@ -352,13 +405,13 @@
         max-width: 100%;
     }
 
-    .buttonContainer {
-        margin-top: 2em;
+    .littleTitle {
+        font-size: 0.47em;
+
     }
 
-    .littleTitle {
+    .button {
         font-size: 0.5em;
-
     }
 }
 
@@ -367,17 +420,8 @@
         font-size: 0.45em;
     }
 
-    .buttonContainer {
-        margin-top: 2em;
-    }
-
-    .title {
-        width: 90%;
-    }
-
     .littleTitle {
-        font-size: 0.6em;
-
+        font-size: 0.42em;
     }
 
     .sliderContent {
@@ -392,7 +436,16 @@
     }
 
     .subtitle {
-        font-size: 0.8em;
+        font-size: 0.56em;
+    }
+
+    .littleTitle {
+        margin-top: 20px;
+        font-size: 0.4em;
+    }
+
+    .buttonContainer {
+        margin-top: 2.5em;
     }
 
     .sliderContainer {
@@ -401,12 +454,16 @@
 }
 
 @media only screen and (max-width: 379px) {
-    .subtitle {
-        font-size: 0.7em;
-    }
+    /* .subtitle {
+            font-size: 0.7em;
+        } */
 
     .littleTitle {
-        font-size: 0.5em;
+        font-size: 0.40em;
+    }
+
+    .button {
+        font-size: 0.4em;
     }
 
     .title {
@@ -416,10 +473,14 @@
 
 }
 
-@media only screen and (max-width: 336px) {
+@media only screen and (max-width: 365px) {
     .littleTitle {
-        font-size: 0.5em;
+        font-size: 0.35em;
         text-align: center;
+    }
+
+    .subtitle {
+        font-size: 0.5em;
     }
 
     .sliderContent {

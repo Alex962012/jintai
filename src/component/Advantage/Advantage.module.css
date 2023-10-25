@@ -30,7 +30,7 @@
     padding-right: 30px;
 }
 
-@media only screen and (max-width: 935px) {
+@media only screen and (max-width: 1005px) {
     .icon {
         padding-right: 5px;
         width: 60px;
@@ -45,12 +45,12 @@
     }
 
     .item {
-        width: 70%;
+        width: 60%;
         margin-top: 20px;
     }
 
     .txt {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     .icon {
@@ -65,9 +65,13 @@
     }
 }
 
-@media only screen and (max-width: 635px) {
+@media only screen and (max-width: 655px) {
     .item {
         height: 8em;
+    }
+
+    .txt {
+        font-size: 1.1em;
     }
 
 }
@@ -78,7 +82,7 @@
     }
 
     .txt {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 }
 
@@ -101,11 +105,16 @@
     .container {
         z-index: 1;
     }
+
+    .txt {
+        font-size: 0.9em;
+    }
 }
 
 @media only screen and (max-width: 440px) {
+
     .txt {
-        font-size: 0.9em;
+        font-size: 0.86em;
     }
 
     .item {
@@ -116,5 +125,11 @@
 @media only screen and (max-width: 391px) {
     .txt {
         font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 351px) {
+    .txt {
+        font-size: 0.7em;
     }
 }
