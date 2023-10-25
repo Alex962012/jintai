@@ -14,7 +14,6 @@ export const SliderForHome = () => {
     };
     return (
         <div className={styles.sliderContainer}>
-
             <Slider {...settings}>
                 <div className={styles.sliderItem}>
                     <div className={`${styles.sliderContent} ${styles.sliderPic1}`}>
@@ -23,7 +22,9 @@ export const SliderForHome = () => {
                                 <div className={styles.title}>
                                     <div className={styles.subtitle}>ПРОДАЖА СПЕЦТЕХНИКИ </div>
                                     <div className={styles.subtitle}>ИЗ КИТАЯ</div>
-                                    <div className={styles.littleTitle}>в наличии и под заказ</div>
+                                    <div className={styles.littleTitle}>
+                                        в наличии и под заказ
+                                    </div>
                                 </div>
                                 <div className={styles.buttonContainer}>
                                     <Link to="/type-catalog">
@@ -41,7 +42,9 @@ export const SliderForHome = () => {
                                 <div className={styles.title}>
                                     <div className={styles.subtitle}>ПРОДАЖА СПЕЦТЕХНИКИ </div>
                                     <div className={styles.subtitle}>ИЗ КИТАЯ</div>
-                                    <div className={styles.littleTitle}>в наличии и под заказ</div>
+                                    <div className={styles.littleTitle}>
+                                        в наличии и под заказ
+                                    </div>
                                 </div>
                                 <div className={styles.buttonContainer}>
                                     <Link to="/type-catalog">
@@ -59,7 +62,9 @@ export const SliderForHome = () => {
                                 <div className={styles.title}>
                                     <div className={styles.subtitle}>ПРОДАЖА СПЕЦТЕХНИКИ </div>
                                     <div className={styles.subtitle}>ИЗ КИТАЯ</div>
-                                    <div className={styles.littleTitle}>в наличии и под заказ</div>
+                                    <div className={styles.littleTitle}>
+                                        в наличии и под заказ
+                                    </div>
                                 </div>
                                 <div className={styles.buttonContainer}>
                                     <Link to="/type-catalog">

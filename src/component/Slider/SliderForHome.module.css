@@ -11,7 +11,6 @@
     display: flex;
     width: 100%;
     align-items: center;
-
 }
 
 .sliderContent {
@@ -25,7 +24,7 @@
 .sliderPic1 {
     position: relative;
     z-index: 10;
-    background-image: url('../../../public/assets/53.jpg');
+    background-image: url("../../../public/assets/53.jpg");
     background-size: contain;
     background-position: left;
     background-repeat: no-repeat;
@@ -37,7 +36,7 @@
 .sliderPic2 {
     position: relative;
     z-index: 10;
-    background-image: url('../../../public/assets/12323.jpg');
+    background-image: url("../../../public/assets/12323.jpg");
     background-size: contain;
     background-position: left;
     background-repeat: no-repeat;
@@ -50,7 +49,7 @@
 .sliderPic3 {
     position: relative;
     z-index: 10;
-    background-image: url('../../../public/assets/1_scaled.jpg');
+    background-image: url("../../../public/assets/1_scaled.jpg");
     background-size: contain;
     background-position: left;
     background-repeat: no-repeat;
@@ -62,7 +61,10 @@
 
 .sliderContentTitle {
     background: rgb(29, 28, 42);
-    background: linear-gradient(49deg, rgba(29, 28, 42, 1) 0%, rgba(38, 38, 67, 1) 49%, rgba(52, 63, 112, 1) 100%);
+    background: linear-gradient(49deg,
+            rgba(29, 28, 42, 1) 0%,
+            rgba(38, 38, 67, 1) 49%,
+            rgba(52, 63, 112, 1) 100%);
     clip-path: polygon(1% 0, 100% 0%, 100% 100%, 19% 100%);
     display: flex;
     height: 100%;
@@ -80,7 +82,6 @@
     max-width: 100%;
 }
 
-
 .title {
     display: flex;
     margin: 0 auto;
@@ -91,11 +92,9 @@
     font-family: "Montserrat", Arial, sans-serif;
 }
 
-
 .subtitle {
     font-size: 2.2em;
     text-align: right;
-
 }
 
 .littleTitle {
@@ -107,7 +106,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(50%)
+    filter: brightness(50%);
 }
 
 .button {
@@ -120,7 +119,7 @@
     letter-spacing: 1px;
     color: white;
     background: #f9b233;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .button:hover {
@@ -134,7 +133,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 @media only screen and (max-width: 1320px) {
@@ -288,7 +286,6 @@
     .sliderContent {
         height: 420px;
     }
-
 }
 
 @media only screen and (max-width: 660px) {
@@ -330,7 +327,6 @@
 }
 
 @media only screen and (max-width: 575px) {
-
     .title {
         width: 90%;
     }
@@ -343,11 +339,9 @@
         height: 400px;
     }
 
-
     .subtitle {
         font-size: 0.7em;
     }
-
 
     .button {
         font-size: 0.6em;
@@ -385,18 +379,14 @@
 }
 
 @media only screen and (max-width: 509px) {
-
     .subtitle {
         font-size: 0.65em;
     }
-
-
 }
 
 @media only screen and (max-width: 481px) {
     .sliderContent {
         height: 300px;
-
     }
 
     .sliderContainer {
@@ -409,7 +399,6 @@
 }
 
 @media only screen and (max-width: 469px) {
-
     .title {
         width: 90%;
         max-width: 100%;
@@ -417,7 +406,6 @@
 
     .littleTitle {
         font-size: 0.47em;
-
     }
 
     .button {
@@ -444,7 +432,6 @@
 }
 
 @media only screen and (max-width: 410px) {
-
     .sliderContent {
         height: 260px;
     }
@@ -470,8 +457,6 @@
         font-size: 0.4em;
     }
 }
-
-
 
 @media only screen and (max-width: 391px) {
     .littleTitle {
