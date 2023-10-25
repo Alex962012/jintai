@@ -115,6 +115,7 @@
     letter-spacing: 1px;
     color: white;
     background: #f9b233;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .button:hover {
