@@ -7,6 +7,10 @@
     font-family: "Montserrat", Arial, sans-serif;
     font-size: 18px;
     font-weight: 600;
+
+    width: 100%;
+    max-width: 1520px;
+    margin: 0 auto;
     margin-top: 20px;
 }
 
